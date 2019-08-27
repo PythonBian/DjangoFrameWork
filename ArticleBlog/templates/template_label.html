@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>template_label</title>
+</head>
+<body>
+    <!--修改为ul格式-->
+    <h2>模板标签</h2>
+    <div>
+        <p>for标签</p>
+        <hr>
+        project: {{ project }}
+        {% for p in project %}
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;{{ p }}</p>
+        {% endfor %}
+    </div>
+    <hr>
+    <div>
+        <p>for标签案例</p>
+        <hr>
+        <table border="1px">
+            <thead>
+                <tr>
+                    <th>
+                        姓名
+                    </th>
+                    <th>
+                        年龄
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for t in teacher %}
+                    <tr>
+                        <td>{{ t.name }}</td>
+                        <td>{{ t.age }}</td>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

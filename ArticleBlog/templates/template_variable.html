@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>template_variable</title>
+</head>
+<body>
+    <!--修改为表格格式-->
+    <h2>模板变量</h2>
+    <div>
+        <p>变量基本调用</p>
+        <hr>
+        name:{{ name }} 变量可以直接调用<br>
+        en_name: {{ en_name.upper }} 可以调用变量的方法，没有参数的方法<br>
+        age: {{ age }} <br>
+        project: {{ project.1 }}  可以调用变量的索引<br>
+        python_score: {{ score.python }} 可以调用变量的键 <br>
+        say: {{ s.say }} 可以调用变量的方法，没有参数的方法
+    </div>
+</body>
+</html>

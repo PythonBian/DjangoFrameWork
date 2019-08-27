@@ -21,4 +21,6 @@ urlpatterns = [
     re_path(r'^$', index),
     path('index/', index),
     re_path('page/(?P<page>\d{1,2})', page_list),
+    path('tv', template_variable),
+    path('tl', template_label),
 ]
