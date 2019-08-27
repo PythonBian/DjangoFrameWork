@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% if article %}
+        <h3 style="text-align: center;">{{ article.title }}</h3>
+        <hr>
+        <h4>{{ article.author }}</h4>
+        <span>{{ article.public_time }}</span>
+        <hr>
+        <p>
+            {{ article.content }}
+        </p>
+    {% else %}
+        <p>抱歉，找不到这篇文章</p>
+    {% endif %}
+    <a href="/page_list/">返回</a>
+</body>
+</html>

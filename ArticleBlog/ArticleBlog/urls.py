@@ -20,7 +20,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'^$', index),
     path('index/', index),
-    re_path('page/(?P<page>\d{1,2})', page_list),
+    path('page_list/', page_list),
+    re_path('page/(?P<id>\d{1,2})/', page),
     path('tv', template_variable),
     path('tl', template_label),
 ]

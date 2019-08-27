@@ -6,11 +6,11 @@ def index(request):
     result = template.render({"name":"老李"}) #类似字符串的渲染 "%s"%a
     return HttpResponse(result) #返回的内容需要是渲染的结果
 
-def page_list(request,page):
-    page = int(page) #page来自于url
-    template = get_template("page_list.html") #加载html页面
-    result = template.render({"page":page}) #将url传递进来的page渲染到页面上
-    return HttpResponse(result) #返回渲染的结果
+# def page_list(request,page):
+#     page = int(page) #page来自于url
+#     template = get_template("page_list.html") #加载html页面
+#     result = template.render({"page":page}) #将url传递进来的page渲染到页面上
+#     return HttpResponse(result) #返回渲染的结果
 
 class Saying:
     def say(self):
@@ -47,6 +47,7 @@ def template_label(request):
     temp = get_template("template_label.html")
     result = temp.render(data)
     return HttpResponse(result)
+
 # def template_label(request):
 #     data = {
 #         "name": "老边",
@@ -57,3 +58,26 @@ def template_label(request):
 #     temp = get_template("template_label.html")
 #     result = temp.render(data)
 #     return HttpResponse(result)
+articles = [
+    {"id": 1, "title": "背影", "author": "朱自清", "public_time": "1883-3-3","content": "买橘子的故事"},
+    {"id": 2, "title": "骆驼祥子", "author": "老舍", "public_time": "1885-3-3", "content": "北京最早的D哥的爱情故事"},
+    {"id": 3, "title": "鬼吹灯", "author": "三叔", "public_time": "1873-3-3", "content": "空气对流的故事"},
+    {"id": 4, "title": "蜀道难", "author": "李白", "public_time": "1643-3-3", "content": "那是一条神奇的天路"},
+    {"id": 5, "title": "道德经", "author": "老子", "public_time": "1873-3-3", "content": "教育的故事"}
+]
+
+def page_list(request):
+    template = get_template("page_list.html")
+    result = template.render({"articles":articles})
+    return HttpResponse(result)
+
+def page(request,id):
+    id = int(id)
+    article = ""
+    for art in articles:
+        if art["id"] == id:
+            article = art
+            break
+    template = get_template("page.html")
+    result = template.render({"article":article})
+    return HttpResponse(result)

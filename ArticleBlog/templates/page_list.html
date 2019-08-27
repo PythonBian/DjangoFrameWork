@@ -3,8 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        li{
+            list-style: none;
+        }
+        .article_table{
+            font-size: 24px;
+            margin: 100px auto;
+        }
+        .article_table tr{
+            border: 1px solid black;
+            width: 700px;
+            height: 48px;
+        }
+
+        .article_table tr td{
+            width: 200px;
+            height: 48px;
+        }
+    </style>
 </head>
 <body>
-    这里是{{ page }} 页
+    <table class="article_table">
+        <caption>2019最火文章</caption>
+        {% for art in articles %}
+            <tr>
+                <td><a href="/page/{{ art.id }}/">{{ art.title }}</a></td>
+                <td>{{ art.author }}</td>
+                <td>{{ art.public_time }}</td>
+            </tr>
+        {% endfor %}
+    </table>
 </body>
 </html>
