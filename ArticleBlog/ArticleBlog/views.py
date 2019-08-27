@@ -59,11 +59,11 @@ def template_label(request):
 #     result = temp.render(data)
 #     return HttpResponse(result)
 articles = [
-    {"id": 1, "title": "背影", "author": "朱自清", "public_time": "1883-3-3","content": "买橘子的故事"},
-    {"id": 2, "title": "骆驼祥子", "author": "老舍", "public_time": "1885-3-3", "content": "北京最早的D哥的爱情故事"},
-    {"id": 3, "title": "鬼吹灯", "author": "三叔", "public_time": "1873-3-3", "content": "空气对流的故事"},
-    {"id": 4, "title": "蜀道难", "author": "李白", "public_time": "1643-3-3", "content": "那是一条神奇的天路"},
-    {"id": 5, "title": "道德经", "author": "老子", "public_time": "1873-3-3", "content": "教育的故事"}
+    {"id": 1, "title": "背影", "author": "朱自清", "public_time": "1883-3-3","content": "买橘子的故事","image":"image/by.jpg"},
+    {"id": 2, "title": "骆驼祥子", "author": "老舍", "public_time": "1885-3-3", "content": "北京最早的D哥的爱情故事","image":"image/ltxz.jpg"},
+    {"id": 3, "title": "鬼吹灯", "author": "三叔", "public_time": "1873-3-3", "content": "空气对流的故事","image":"image/gcd.jpg"},
+    {"id": 4, "title": "蜀道难", "author": "李白", "public_time": "1643-3-3", "content": "那是一条神奇的天路","image":"image/adn.jpg"},
+    {"id": 5, "title": "道德经", "author": "老子", "public_time": "1873-3-3", "content": "教育的故事","image":"image/ddj.jpg"}
 ]
 
 def page_list(request):

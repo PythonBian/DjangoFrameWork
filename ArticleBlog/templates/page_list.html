@@ -21,6 +21,10 @@
             width: 200px;
             height: 48px;
         }
+        .article_table tr td img{
+            width: 100px;
+            height: 100px;
+        }
     </style>
 </head>
 <body>
@@ -28,6 +32,8 @@
         <caption>2019最火文章</caption>
         {% for art in articles %}
             <tr>
+                <td>{{ art.id }}</td>
+                <td><a href="/page/{{ art.id }}/"><img src="/static/{{ art.image }}"></a></td>
                 <td><a href="/page/{{ art.id }}/">{{ art.title }}</a></td>
                 <td>{{ art.author }}</td>
                 <td>{{ art.public_time }}</td>
