@@ -38,8 +38,12 @@ def template_label(request):
             {"name": "老温", "age": 43},
             {"name": "老王", "age": 65},
             {"name": "老申", "age": 48}
-        ]
+        ],
+        "outer":"abc",
+        "login_valid": 0,
+        "commit": "<script>alert('hello world')</script>"
     }
+
     temp = get_template("template_label.html")
     result = temp.render(data)
     return HttpResponse(result)

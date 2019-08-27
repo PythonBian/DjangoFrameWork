@@ -35,9 +35,45 @@
                     <tr>
                         <td>{{ t.name }}</td>
                         <td>{{ t.age }}</td>
+                    </tr>
                 {% endfor %}
             </tbody>
         </table>
+    </div>
+    <hr>
+    <div>
+        <p>forloop变量案例</p>
+        <hr>
+            {% for o in outer %}
+                <h3>outer的forloop :{{ forloop.counter }}</h3>
+                {% for t in teacher %}
+                    <p>teacher的forloop :{{ forloop.counter }}</p>
+                {% endfor %}
+            {% endfor %}
+    </div>
+    <div>
+        <p>if标签案例</p>
+        <hr>
+            {% if login_valid %}
+                <a href="#">退出登录</a>
+            {% else %}
+                <a href="#">登录</a>
+            {% endif %}
+    </div>
+    <div>
+        <p>ifequal标签案例</p>
+        <hr>
+            {% ifequal login_valid 1 %}
+                <a href="#">退出登录</a>
+            {% else %}
+                <a href="#">登录</a>
+            {% endifequal %}
+    </div>
+    <div>
+        <p>safe过滤器</p>
+        <hr>
+        <p>{{ commit }}</p>
+        <p>{{ commit|safe }}</p>
     </div>
 </body>
 </html>

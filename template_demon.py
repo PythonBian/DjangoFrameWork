@@ -19,13 +19,14 @@
 #
 # print(template%{"name":"懒洋洋","time":"1888-02-04","address":"羊村大酒店","yours":"灰太狼"})
 
-import os
+# import os
+#
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# print(os.path.abspath(__file__)) #返回绝对路径
+# print(os.path.dirname(os.path.abspath(__file__))) #返回目录
+# print(BASE_DIR)
+# print(os.path.join(BASE_DIR,"hhhhh"))
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-print(os.path.abspath(__file__)) #返回绝对路径
-print(os.path.dirname(os.path.abspath(__file__))) #返回目录
-print(BASE_DIR)
-print(os.path.join(BASE_DIR,"hhhhh"))
 
-
-
+for i in enumerate("abc",2):
+    print(i)
