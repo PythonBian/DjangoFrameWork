@@ -1,21 +1,13 @@
-from django.http import HttpResponse
+from django.http import HttpResponse #返回http响应
+from django.template.loader import get_template #用来加载settings的TEMPLATES配置当中的html页面
 
 def index(request):
-    """
-    :param request: 在django的视图函数当中，起到接受请求的作用
-    """
-    #django规定，响应必须是一个response对象
-    #1+"a"
-    return HttpResponse('<h1 style="color:red;">hello world</h1>')
-    # return '<h1 style="color:red;">hello world</h1>'
-def index1(request):
-    """
-    :param request: 在django的视图函数当中，起到接受请求的作用
-    """
-    #django规定，响应必须是一个response对象
-    #1+"a"
-    return HttpResponse('<h1 style="color:red;">hello world 1</h1>')
-    # return '<h1 style="color:red;">hello world</h1>'
+    template = get_template("index.html") #加载页面
+    result = template.render({"name":"老李"}) #类似字符串的渲染 "%s"%a
+    return HttpResponse(result) #返回的内容需要是渲染的结果
 
-def introduce(request,name,age):
-    return HttpResponse('<h1 style="color:red;">hello world,I am %s,I am %s years old</h1>'%(name,age))
+def page_list(request,page):
+    page = int(page) #page来自于url
+    template = get_template("page_list.html") #加载html页面
+    result = template.render({"page":page}) #将url传递进来的page渲染到页面上
+    return HttpResponse(result) #返回渲染的结果

@@ -18,9 +18,7 @@ from django.urls import path,re_path
 from ArticleBlog.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index/', index),
-    re_path(r'^\d{2}$', index1),
-    re_path(r'\d+', index),
     re_path(r'^$', index),
-    re_path(r'^introduce/(?P<name>\w+)/(?P<age>\d{1,2})$', introduce)
+    path('index/', index),
+    re_path('page/(?P<page>\d{1,2})', page_list),
 ]
