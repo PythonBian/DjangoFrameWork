@@ -16,11 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,re_path
 from ArticleBlog.views import *
-
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path(r'^$',index),
-    path('newlist/', newList),
-    path('new/', new),
+    re_path(r'^$', index),
     path('index/', index),
+    path('page_list/', page_list),
+    re_path('page/(?P<id>\d{1,2})/', page),
+    path('tv', template_variable),
+    path('tl', template_label),
 ]
