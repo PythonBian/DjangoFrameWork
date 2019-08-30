@@ -8,7 +8,7 @@
           <li>
             <div class="dttext f_l">
                 <ul>
-                  <h2><a href="/">{{ art.title }}</a></h2>
+                  <h2><a href="/new/{{ art.id }}">{{ art.title }}</a></h2>
                   <p>{{ art.description }}</p>
                   <span>{{ art.public_time }}</span>
                 </ul>
@@ -21,8 +21,8 @@
       <div class="pagelist">页次：{{ p }}/{{ article_list.num_pages }} 每页{{ page_size }} 总数{{ article_list.count }}
           <a href="/">首页</a>
           <a href="/">上一页</a>
-          {% for p in article_list.page_range %}
-            <a href="/">{{ p }}</a>
+          {% for p in page_range %}
+            <a href="/newlist/{{ p }}">{{ p }}</a>
           {% endfor %}
           <a href="/">下一页</a>
           <a href="/">尾页</a></div>

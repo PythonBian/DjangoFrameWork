@@ -17,7 +17,7 @@
           <figure><img src="/static/images/img_1.jpg" alt="{{ art.title }}"></figure>
           <ul>
             <p> {{ art.description }}</p>
-            <a title="{{ art.title }}" href="/jstt/bj/2017-07-13/784.html" target="_blank" class="readmore">阅读全文&gt;&gt;</a>
+            <a title="{{ art.title }}" href="/new/{{ art.id }}" target="_blank" class="readmore">阅读全文&gt;&gt;</a>
           </ul>
           <p class="dateview"><span>{{ art.public_time }}</span><span>作者：{{ art.article_author.name }}</span><span>个人博客：[<a href="/jstt/bj/">{{ art.article_type.1.label }}</a>]</span></p>
         {% endfor %}
@@ -40,7 +40,7 @@
         <h3 class="tit">图文推荐</h3>
         <ul>
           {% for art in recom_article %}
-              <li><a href="/"><img src="/static/images/01.jpg"><b>{{ art.title }}</b></a>
+              <li><a href="/new/{{ art.id }}"><img src="/static/images/01.jpg"><b>{{ art.title }}</b></a>
                 <p><span class="tulanmu"><a href="/">手机配件</a></span><span class="tutime">{{ art.public_time }}</span></p>
               </li>
           {% endfor %}
@@ -50,7 +50,7 @@
         <h3 class="tit">点击排行</h3>
         <ul class="rank">
           {% for art in click_article %}
-              <li><a href="/jstt/bj/2017-07-13/784.html" title="{{ art.title }}" target="_blank">{{ art.title }}</a></li>
+              <li><a href="/new/{{ art.id }}" title="{{ art.title }}" target="_blank">{{ art.title }}</a></li>
           {% endfor %}
         </ul>
       </div>

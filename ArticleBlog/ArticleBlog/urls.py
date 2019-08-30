@@ -20,7 +20,7 @@ from Article.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'^$',index),
-    path('newlist/', newList),
-    path('new/', new),
+    re_path(r'newlist/(?P<types>\w+)/(?P<p>\d{1,2})', newList),
+    re_path('new/(?P<id>\d{1,2})', new),
     path('index/', index),
 ]
