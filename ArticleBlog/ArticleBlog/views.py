@@ -11,8 +11,7 @@ def newList(request):
     #article_list = Article.objects.filter(title="背影") #按照条件过滤
     #article_list = Article.objects.order_by("-id") #按照条件过滤,通常查询都需要进行排序，order_by相当于排序查询所有
     #article_list = Article.objects.filter(title="背影").order_by("id") # 按照条件过滤,然后排序
-    article_list = Article.objects.filter(title="背影").order_by("id").values("title","public_time")
-    print(article_list)
+    # article_list = Article.objects.order_by("id")#.values("title","public_time")
     return render_to_response("newlist.html",locals())
 
 def new(request):

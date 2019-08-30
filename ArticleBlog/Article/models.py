@@ -32,6 +32,8 @@ class Article(models.Model):
     article_type = models.ManyToManyField(to=ArticleType)
     public_time = models.DateField(auto_now=True)
     picture = models.ImageField(upload_to='images')
+    click = models.IntegerField() #点击率
+    recommend = models.IntegerField(default=0) #推荐 0位默认，1位推荐
 
     def __str__(self):
         return self.title
