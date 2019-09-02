@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+</head>
+<body>
+    <form>
+        <input type="text" name="searchKey">
+        <input type="submit" value="按我呀！">
+    </form>
+    {% for art in articles %}
+    <p>
+        {{ art.title }}
+    </p>
+    {% endfor %}
+</body>
+</html>

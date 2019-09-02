@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <p>
+            request参数
+        </p>
+        <hr>
+        <p>
+            {{ request }}
+
+        </p>
+    </div>
+    <div>
+        <p>
+            请求的方法
+        </p>
+        <hr>
+        {% for method in request_method  %}
+            <p>
+                {{ method }}
+            </p>
+        {% endfor %}
+    </div>
+    <hr>
+    <div>
+        <p>
+            request.path
+        </p>
+        <hr>
+        <p>
+            {{ request.path }}
+        </p>
+    </div>
+    <hr>
+    <div>
+        <p>
+            request.META
+        </p>
+        <hr>
+        {% for key,value in request.META.items %}
+        <p>
+            {{ key }}&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;{{ value }}
+        </p>
+        {% endfor %}
+    </div>
+    <div>
+        <p>
+            request.META.OS
+        </p>
+        <hr>
+        <p>
+            {{ request.META.OS }}
+        </p>
+    </div>
+
+</body>
+</html>

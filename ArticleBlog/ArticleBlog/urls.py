@@ -23,5 +23,7 @@ urlpatterns = [
     re_path(r'newlist/(?P<types>\w+)/(?P<p>\d{1,2})', newList),
     re_path('new/(?P<id>\d{1,2})', new),
     path('index/', index),
-    path('ckeditor/',include("ckeditor_uploader.urls"))
+    path('ckeditor/',include("ckeditor_uploader.urls")),
+    path('req_arg/', req_arg),
+    path('form_exam/', form_exam),
 ]

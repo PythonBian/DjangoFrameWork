@@ -52,5 +52,25 @@ def index(request):
     return render_to_response("index.html",locals())
 
 
+def req_arg(request):
+    request_method = dir(request)
+    return render_to_response("request_arguement.html",locals())
+
+def form_exam(request):
+    searchKey = request.GET.get("searchKey")
+    articles = []
+    if searchKey: #判断searchKey是否为真 非空（字符串，字典，列表，元组，set），非0，
+        articles = Article.objects.filter(title__contains=searchKey)
+    return render_to_response("formExample.html",locals())
+
+
+
+
+
+
+
+
+
+
 
 
