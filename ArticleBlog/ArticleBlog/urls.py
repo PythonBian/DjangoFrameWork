@@ -26,4 +26,6 @@ urlpatterns = [
     path('ckeditor/',include("ckeditor_uploader.urls")),
     path('req_arg/', req_arg),
     path('form_exam/', form_exam),
+    path('csrf_exam/', csrf_exam),
+    path('register/', register)
 ]

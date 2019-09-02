@@ -56,16 +56,34 @@ def req_arg(request):
     request_method = dir(request)
     return render_to_response("request_arguement.html",locals())
 
+from django.shortcuts import render
 def form_exam(request):
     searchKey = request.GET.get("searchKey")
     articles = []
     if searchKey: #判断searchKey是否为真 非空（字符串，字典，列表，元组，set），非0，
         articles = Article.objects.filter(title__contains=searchKey)
-    return render_to_response("formExample.html",locals())
+    return render(request,"formExample.html",locals())
 
+def csrf_exam(request):
+    return render_to_response("csrf_example.html")
+import hashlib
 
+def setPassword(password):
+    md5 = hashlib.md5() #创建hash md5加密的实例
+    md5.update(password.encode()) #进行加密
+    result = md5.hexdigest()
+    return result
 
-
+def register(request):
+    if request.method == "POST": #判断请求方式
+        username = request.POST.get("username")  #获取用户名
+        password = request.POST.get("password")  #获取密码
+        if username and password: #判断用户名和密码
+            u = User() #实例化模型
+            u.username = username #保存用户名
+            u.password = setPassword(password) #保存密码
+            u.save() #保存数据
+    return render(request,"register.html",locals())
 
 
 
