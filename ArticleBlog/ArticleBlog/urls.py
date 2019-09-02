@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path,re_path
+from django.urls import path,re_path,include
 from Article.views import *
 
 urlpatterns = [
@@ -23,4 +23,5 @@ urlpatterns = [
     re_path(r'newlist/(?P<types>\w+)/(?P<p>\d{1,2})', newList),
     re_path('new/(?P<id>\d{1,2})', new),
     path('index/', index),
+    path('ckeditor/',include("ckeditor_uploader.urls"))
 ]
