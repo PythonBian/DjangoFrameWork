@@ -24,6 +24,7 @@
             background-color: springgreen;
         }
     </style>
+    <script src="/static/jq/jquery.min.js"></script>
 </head>
 <body>
     <form method="post">
@@ -32,7 +33,7 @@
             <input type="text" name="username" placeholder="用户名">
         </p>
         <p>
-            <input type="text" name="email" placeholder="邮箱">
+            <input id="email" type="text" name="email" placeholder="邮箱">
         </p>
         <p>
             <input type="password" name="password" placeholder="密码">
@@ -45,6 +46,31 @@
             <input class="submit" type="submit" value="提交">
         </p>
     </form>
-    {{ errors }}
+    <p style="color: red" id="errormeg"></p>
+    <script>
+        $("#email").blur(
+            function () {
+                var em = $("#email").val();
+                var url = "/user_valid/?email="+em;
+                console.log(url);
+                if(em){
+                    $.ajax(
+                        {
+                            url:url,
+                            type: "get",
+                            data: "",
+                            success: function (data) {
+                                content = data["data"];
+                                $("#errormeg").text(content)
+                            },
+                            error: function (error) {
+                                console.log(error)
+                            }
+                        }
+                    )
+                }
+            }
+        )
+    </script>
 </body>
 </html>

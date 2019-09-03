@@ -87,15 +87,30 @@ def register(request):
             clean_data = data_valid.cleaned_data #校验过的数据组成的字典
             username = clean_data.get("username")
             password = clean_data.get("password")
-
+            email = clean_data.get("email")
             u = User() #实例化模型
             u.username = username #保存用户名
             u.password = setPassword(password) #保存密码
+            u.email = email
             u.save() #保存数据
         else:
             errors = data_valid.errors
             print(errors)
     return render(request,"register.html",locals())
+
+def user_valid(request):
+    email = request.GET.get("email") #获取请求的email
+    result = {"code":"400","data":""} #定义返回的数据格式
+    if email:
+        user = User.objects.filter(email = email).first() #安装email查询用户
+        if user: #用户存在，邮箱不可用
+            result["data"] = "当前邮箱已经完成注册，请登录"
+        else: #用户不存在，邮箱可以用
+            result["code"] = "200"
+            result["data"] = "当前邮箱可以注册"
+    else: #空
+        result["data"] = "邮箱不可以为空"
+    return JsonResponse(result)
 
 def jq_exam(request):
     return render(request,"jqExample.html")
