@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/static/jq/jquery.min.js"></script>
+</head>
+<body>
+    <input class="hello" id="content" type="text"><span id="error"></span>
+    <input class="hello" id="button" type="button" value="button">
+    <script>
+        $(
+            function () {
+                $("#button").click(
+                    function () {
+                        var name = $("#content").val();
+                        $.ajax(
+                            {
+                                url:"/agd/?name="+name,
+                                type:"get",
+                                data:"",
+                                success:function (value) {
+                                    console.log(value["hello"]);
+                                    $("#content").val(value["hello"])
+                                },
+                                error: function (error) {
+                                    console.log(error)
+                                }
+                            }
+                        )
+                    }
+                )
+            }
+        )//页面加载完成执行
+    </script>
+</body>
+</html>

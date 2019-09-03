@@ -27,5 +27,10 @@ urlpatterns = [
     path('req_arg/', req_arg),
     path('form_exam/', form_exam),
     path('csrf_exam/', csrf_exam),
-    path('register/', register)
+    path('register/', register),
+    path('jq_exam/', jq_exam),
+    path('agp/', ajax_get_page),
+    path('agd/', ajax_get_data),
+    path('app/', ajax_post_page),
+    path('apd/', ajax_post_data),
 ]

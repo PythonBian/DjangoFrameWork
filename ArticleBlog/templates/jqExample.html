@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/static/jq/jquery.min.js"></script>
+</head>
+<body>
+    <input class="hello" id="content" type="text"><span id="error"></span>
+    <input class="hello" id="button" type="button" value="button">
+    <script>
+        $(
+            function () {
+                $("#content").blur(
+                    function () {
+                       var val = $("#content").val();
+                       if(val==""){
+                           alert("啥都不写，你跑啥")
+                       }
+                    }
+                );
+                $("#button").click(
+                    function () {
+                        $("#content").val("hello world");
+                        $("#error").text("hello world")
+                    }
+                )
+            }
+        )//页面加载完成执行
+    </script>
+</body>
+</html>

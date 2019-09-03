@@ -94,7 +94,46 @@ def register(request):
             u.save() #保存数据
         else:
             errors = data_valid.errors
+            print(errors)
     return render(request,"register.html",locals())
+
+def jq_exam(request):
+    return render(request,"jqExample.html")
+
+def ajax_get_page(request):
+    """
+    负责页面
+    :param request:
+    :return:
+    """
+    return render(request,"ajax_get_page.html")
+
+from django.http import JsonResponse
+def ajax_get_data(request):
+    """
+    负责数据
+    :param request:
+    :return:
+    """
+    name = request.GET.get("name")
+    return JsonResponse({"hello":"来自后台的数据,你的名字是%s"%name})
+
+def ajax_post_page(request):
+    """
+    负责页面
+    :param request:
+    :return:
+    """
+    return render(request,"ajax_post_page.html")
+
+from django.http import JsonResponse
+def ajax_post_data(request):
+    """
+    负责数据
+    :param request:
+    :return:
+    """
+    return JsonResponse({"hello":"来自后台的数据"})
 
 # def register(request):
 #     register_form = Register()
