@@ -74,16 +74,39 @@ def setPassword(password):
     result = md5.hexdigest()
     return result
 
+from Article.forms import Register
+
+
 def register(request):
+    register_form = Register()
     if request.method == "POST": #判断请求方式
-        username = request.POST.get("username")  #获取用户名
-        password = request.POST.get("password")  #获取密码
-        if username and password: #判断用户名和密码
+        # request_data = request.POST
+        # data_valid = Register(request_data)
+        data_valid = Register(request.POST)
+        if data_valid.is_valid(): #判断提交的数据是否合法，如果合法为True，否则为false。
+            clean_data = data_valid.cleaned_data #校验过的数据组成的字典
+            username = clean_data.get("username")
+            password = clean_data.get("password")
+
             u = User() #实例化模型
             u.username = username #保存用户名
             u.password = setPassword(password) #保存密码
             u.save() #保存数据
+        else:
+            errors = data_valid.errors
     return render(request,"register.html",locals())
+
+# def register(request):
+#     register_form = Register()
+#     if request.method == "POST": #判断请求方式
+#         username = request.POST.get("username")  #获取用户名
+#         password = request.POST.get("password")  #获取密码
+#         if username and password: #判断用户名和密码
+#             u = User() #实例化模型
+#             u.username = username #保存用户名
+#             u.password = setPassword(password) #保存密码
+#             u.save() #保存数据
+#     return render(request,"register.html",locals())
 
 
 

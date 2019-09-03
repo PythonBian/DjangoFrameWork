@@ -3,21 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <title>注册</title>
+    <style>
+        body{
+            background-color: coral;
+        }
+        form{
+            margin-top: 8%;
+        }
+        input{
+            font-size: 36px;
+            width: 50%;
+            margin-bottom: 20px;
+        }
+        p{
+            text-align: center;
+        }
+        .submit{
+            border: none;
+            color: white;
+            background-color: springgreen;
+        }
+    </style>
 </head>
 <body>
-        <form method="post">
-            {% csrf_token %}
-            <p>
-                <label>用户名</label>
-                <input type="text" name="username">
-            </p>
-            <p>
-                <label>密&nbsp;&nbsp;&nbsp;码</label>
-                <input type="password" name="password">
-            </p>
-            <p>
-                <input type="submit" value="提交">
-            </p>
+    <form method="post">
+        {% csrf_token %}
+        <p>
+            <input type="text" name="username" placeholder="用户名">
+        </p>
+        <p>
+            <input type="text" name="email" placeholder="邮箱">
+        </p>
+        <p>
+            <input type="password" name="password" placeholder="密码">
+        </p>
+        <p>
+            <input type="password" name="d_password" placeholder="密码重复">
+        </p>
+
+        <p>
+            <input class="submit" type="submit" value="提交">
+        </p>
     </form>
 </body>
 </html>
