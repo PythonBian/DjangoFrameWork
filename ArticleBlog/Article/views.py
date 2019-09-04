@@ -162,8 +162,21 @@ def ajax_post_data(request):
 #             u.save() #保存数据
 #     return render(request,"register.html",locals())
 
-
-
+from django.http import HttpResponseRedirect #跳转
+def login(request):
+    if request.method == "POST":
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+        user = User.objects.filter(username = username).first()
+        if user:
+            db_password = user.password
+            password = setPassword(password)
+            if password == db_password:
+                response = HttpResponseRedirect("/index/")
+                response.set_cookie("name","laobian")
+                response.set_cookie("age", "18")
+                return response #这里写路由不写页面
+    return render(request,"login.html")
 
 
 

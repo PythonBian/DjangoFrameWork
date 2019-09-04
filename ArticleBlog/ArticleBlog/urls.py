@@ -33,5 +33,6 @@ urlpatterns = [
     path('agd/', ajax_get_data),
     path('app/', ajax_post_page),
     path('apd/', ajax_post_data),
-    path('user_valid/',user_valid)
+    path('user_valid/',user_valid),
+    path('login/', login)
 ]
