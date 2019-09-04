@@ -5,7 +5,8 @@ from Article.models import *
 def loginValid(fun):
     def inner(request,*args,**kwargs):
         username = request.COOKIES.get("username")
-        if username:
+        session_username = request.session.get("username")
+        if username and session_username:
             return fun(request,*args,**kwargs)
         else:
             return HttpResponseRedirect("/login/")
@@ -184,14 +185,16 @@ def login(request):
                 response = HttpResponseRedirect("/index/")
                 response.set_cookie("username",user.username)
                 response.set_cookie("age", "18")
+                #session设置
+                request.session["username"] = user.username
                 return response #这里写路由不写页面
     return render(request,"login.html")
-
 
 def logout(request):
     response = HttpResponseRedirect("/login/")
     response.delete_cookie("username")
     response.delete_cookie("age")
+    del request.session["username"]
     return response
 
 
