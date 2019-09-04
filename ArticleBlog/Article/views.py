@@ -2,6 +2,15 @@ from django.shortcuts import render_to_response #=get_template+HttpResponse
 from django.core.paginator import Paginator
 from Article.models import *
 
+def loginValid(fun):
+    def inner(request,*args,**kwargs):
+        username = request.COOKIES.get("username")
+        if username:
+            return fun(request,*args,**kwargs)
+        else:
+            return HttpResponseRedirect("/login/")
+    return inner
+
 def set_page(page_list,page):
     """
     page_list  # 页码范围
@@ -39,6 +48,7 @@ def new(request,id):
 
     return render_to_response("new.html",locals())
 
+@loginValid #index = loginValid(index)
 def index(request):
     """
     1、查询最新的6条
@@ -50,7 +60,6 @@ def index(request):
     click_article = Article.objects.order_by("-click")[:12]
 
     return render_to_response("index.html",locals())
-
 
 def req_arg(request):
     request_method = dir(request)
@@ -173,12 +182,17 @@ def login(request):
             password = setPassword(password)
             if password == db_password:
                 response = HttpResponseRedirect("/index/")
-                response.set_cookie("name","laobian")
+                response.set_cookie("username",user.username)
                 response.set_cookie("age", "18")
                 return response #这里写路由不写页面
     return render(request,"login.html")
 
 
+def logout(request):
+    response = HttpResponseRedirect("/login/")
+    response.delete_cookie("username")
+    response.delete_cookie("age")
+    return response
 
 
 

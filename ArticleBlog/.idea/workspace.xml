@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d991d4b-b90d-4ce9-8aaf-d2ce13673473" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Article/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Article/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ArticleBlog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ArticleBlog/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ArticleBlog/views.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,6 +12,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/ArticleBlog$fun.coverage" NAME="fun Coverage Results" MODIFIED="1567566695447" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.." />
     <SUITE FILE_PATH="coverage/ArticleBlog$template_demon.coverage" NAME="template_demon Coverage Results" MODIFIED="1566885409337" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.." />
     <SUITE FILE_PATH="coverage/ArticleBlog$pythonSpiderAboutArticle.coverage" NAME="pythonSpiderAboutArticle Coverage Results" MODIFIED="1567070579342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.." />
     <SUITE FILE_PATH="coverage/ArticleBlog$demo1.coverage" NAME="demo1 Coverage Results" MODIFIED="1567488349632" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ArticleBlog" />
@@ -59,7 +57,7 @@
         <counts>
           <entry key="html" value="57" />
           <entry key="jpg" value="1" />
-          <entry key="py" value="86" />
+          <entry key="py" value="89" />
           <entry key="sql" value="1" />
         </counts>
       </usages-collector>
@@ -67,7 +65,7 @@
         <counts>
           <entry key="HTML" value="57" />
           <entry key="Image" value="1" />
-          <entry key="Python" value="86" />
+          <entry key="Python" value="89" />
           <entry key="SQL" value="1" />
         </counts>
       </usages-collector>
@@ -75,13 +73,13 @@
         <counts>
           <entry key="Django Console" value="27" />
           <entry key="html" value="4147" />
-          <entry key="py" value="10341" />
+          <entry key="py" value="10988" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="4147" />
-          <entry key="Python" value="10366" />
+          <entry key="Python" value="11013" />
           <entry key="SQL" value="2" />
         </counts>
       </usages-collector>
@@ -92,8 +90,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ArticleBlog/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="36" column="25" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+            <state relative-caret-position="353">
+              <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
               <folding>
                 <element signature="e#635#667#0" expanded="true" />
               </folding>
@@ -113,20 +111,28 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Article/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="175" column="35" selection-start-line="175" selection-start-column="25" selection-end-line="175" selection-end-column="35" />
+            <state relative-caret-position="106">
+              <caret line="50" column="37" selection-start-line="50" selection-start-column="37" selection-end-line="50" selection-end-column="37" />
               <folding>
-                <marker date="1567560284880" expanded="true" signature="5285:5331" ph="..." />
+                <marker date="1567566915853" expanded="true" signature="170:412" ph="..." />
+                <marker date="1567566915853" expanded="true" signature="5656:5800" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://C:/ProgramData/Anaconda3/envs/DjangoPath/Lib/site-packages/django/http/response.py">
+        <entry file="file://$PROJECT_DIR$/../fun.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="158" column="75" selection-start-line="157" selection-start-column="25" selection-end-line="158" selection-end-column="75" />
+            <state relative-caret-position="264">
+              <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+              <folding>
+                <marker date="1567566893713" expanded="true" signature="16:17" ph="..." />
+                <marker date="1567566893713" expanded="true" signature="16:21" ph="..." />
+                <marker date="1567566893713" expanded="true" signature="40:127" ph="..." />
+                <marker date="1567566893713" expanded="true" signature="197:202" ph="..." />
+                <marker date="1567566893713" expanded="true" signature="261:284" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -161,6 +167,9 @@
       <find>newList</find>
       <find>For</find>
       <find>register</find>
+      <find>def inde</find>
+      <find>Def in</find>
+      <find>def in</find>
     </findStrings>
     <replaceStrings>
       <replace>边进辉个人博客</replace>
@@ -206,8 +215,9 @@
         <option value="$PROJECT_DIR$/Article/models.py" />
         <option value="$PROJECT_DIR$/templates/register.html" />
         <option value="$PROJECT_DIR$/ArticleBlog/views.py" />
-        <option value="$PROJECT_DIR$/ArticleBlog/urls.py" />
         <option value="$PROJECT_DIR$/templates/login.html" />
+        <option value="$PROJECT_DIR$/ArticleBlog/urls.py" />
+        <option value="$PROJECT_DIR$/../fun.py" />
         <option value="$PROJECT_DIR$/Article/views.py" />
       </list>
     </option>
@@ -236,11 +246,6 @@
             <path>
               <item name="ArticleBlog" type="b2602c69:ProjectViewProjectNode" />
               <item name="ArticleBlog" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ArticleBlog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ArticleBlog" type="462c0819:PsiDirectoryNode" />
-              <item name="Article" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ArticleBlog" type="b2602c69:ProjectViewProjectNode" />
@@ -289,7 +294,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Django server.ArticleBlog">
+  <component name="RunManager" selected="Python.fun">
     <configuration name="demo1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ArticleBlog" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -304,6 +309,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ArticleBlog/demo1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="fun" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="ArticleBlog" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/.." />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../fun.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -378,28 +405,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="template_demon" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="ArticleBlog" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/.." />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../template_demon.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="ArticleBlog" type="Python.DjangoServer" factoryName="Django server">
       <module name="ArticleBlog" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -426,19 +431,19 @@
     </configuration>
     <list>
       <item itemvalue="Django server.ArticleBlog" />
-      <item itemvalue="Python.template_demon" />
       <item itemvalue="Python.python_function_demon" />
       <item itemvalue="Python.pythonSpiderAboutArticle" />
       <item itemvalue="Python.set_page" />
       <item itemvalue="Python.demo1" />
+      <item itemvalue="Python.fun" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.fun" />
         <item itemvalue="Python.demo1" />
         <item itemvalue="Python.set_page" />
         <item itemvalue="Python.pythonSpiderAboutArticle" />
         <item itemvalue="Python.python_function_demon" />
-        <item itemvalue="Python.template_demon" />
       </list>
     </recent_temporary>
   </component>
@@ -464,7 +469,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28129205" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32839838" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.38088828" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -516,19 +521,18 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Article/views.py</url>
-          <line>84</line>
+          <line>93</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Article/views.py</url>
-          <line>167</line>
+          <line>176</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ArticleBlog/index.html" />
     <entry file="file://$PROJECT_DIR$/templates/template_variable.html" />
     <entry file="file://$PROJECT_DIR$/../template_demon.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -626,13 +630,6 @@
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/article.sql" />
-    <entry file="file://$PROJECT_DIR$/../pythonSpiderAboutArticle.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/ProgramData/Anaconda3/envs/DjangoPath/Lib/site-packages/requests/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1089">
@@ -794,12 +791,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://C:/ProgramData/Anaconda3/envs/DjangoPath/Lib/site-packages/django/http/response.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="158" column="75" selection-start-line="157" selection-start-column="25" selection-end-line="158" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../pythonSpiderAboutArticle.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-462">
+          <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ArticleBlog/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="36" column="25" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+        <state relative-caret-position="353">
+          <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
           <folding>
             <element signature="e#635#667#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/ProgramData/Anaconda3/envs/DjangoPath/Lib/site-packages/django/core/handlers/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="123" selection-start-line="123" selection-end-line="123" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../fun.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+          <folding>
+            <marker date="1567566893713" expanded="true" signature="16:17" ph="..." />
+            <marker date="1567566893713" expanded="true" signature="16:21" ph="..." />
+            <marker date="1567566893713" expanded="true" signature="40:127" ph="..." />
+            <marker date="1567566893713" expanded="true" signature="197:202" ph="..." />
+            <marker date="1567566893713" expanded="true" signature="261:284" ph="..." />
           </folding>
         </state>
       </provider>
@@ -811,26 +843,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/ProgramData/Anaconda3/envs/DjangoPath/Lib/site-packages/django/core/handlers/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="123" selection-start-line="123" selection-end-line="123" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/ProgramData/Anaconda3/envs/DjangoPath/Lib/site-packages/django/http/response.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="158" column="75" selection-start-line="157" selection-start-column="25" selection-end-line="158" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Article/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="175" column="35" selection-start-line="175" selection-start-column="25" selection-end-line="175" selection-end-column="35" />
+        <state relative-caret-position="106">
+          <caret line="50" column="37" selection-start-line="50" selection-start-column="37" selection-end-line="50" selection-end-column="37" />
           <folding>
-            <marker date="1567560284880" expanded="true" signature="5285:5331" ph="..." />
+            <marker date="1567566915853" expanded="true" signature="170:412" ph="..." />
+            <marker date="1567566915853" expanded="true" signature="5656:5800" ph="..." />
           </folding>
         </state>
       </provider>
