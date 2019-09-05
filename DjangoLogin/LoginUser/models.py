@@ -19,4 +19,5 @@ class Goods(models.Model):
     goods_location = models.CharField(max_length=254)
     goods_safe_date = models.IntegerField()
     goods_pro_time = models.DateField(auto_now=True)
+    goods_status = models.IntegerField() #0为下架，1 为在售
 # Create your models here.

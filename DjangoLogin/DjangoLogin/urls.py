@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,re_path
 
 from LoginUser.views import *
 urlpatterns = [
@@ -24,6 +24,7 @@ urlpatterns = [
     path('index/', index),
     path('logout/', logout),
     path('goods_list/', goods_list),
-    path('add_goods/', add_goods),
-
+    re_path('goods_list/(?P<page>\d+)/(?P<status>[01])/', goods_list),
+    re_path('goods_status/(?P<state>\w+)/(?P<id>\d+)/', goods_status),
+    # path('add_goods/', add_goods),
 ]

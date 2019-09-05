@@ -1,6 +1,8 @@
 import hashlib
 
+from django.core.paginator import Paginator
 from django.shortcuts import render,HttpResponseRedirect,HttpResponse
+
 from LoginUser.models import *
 
 def loginValid(fun):
@@ -77,8 +79,36 @@ def index(request):
     return render(request,"index.html",locals())
 
 @loginValid
-def goods_list(request):
-    return render(request,"goods_list.html")
+def goods_list(request,status,page=1):
+    page = int(page)
+    if status == "1":
+        goodses = Goods.objects.filter(goods_status = 1)
+    elif status == "0":
+        goodses = Goods.objects.filter(goods_status = 0)
+    else:
+        goodses = Goods.objects.all()
+    all_goods = Paginator(goodses,10)
+    goods_list = all_goods.page(page)
+    return render(request,"goods_list.html",locals())
+
+def goods_status(request,state,id):
+    id = int(id)
+    goods = Goods.objects.get(id = id)
+    if state == "up":
+        goods.goods_status = 1
+    elif state == "down":
+        goods.goods_status = 0
+    goods.save()
+    url = request.META.get("HTTP_REFERER","/goods_list/1/1")
+    return HttpResponseRedirect(url)
+
+
+
+
+
+
+
+
 
 import random
 
