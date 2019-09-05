@@ -11,4 +11,12 @@ class LoginUser(models.Model):
     gender = models.CharField(max_length = 32,null = True,blank = True)
     address = models.TextField(null = True,blank = True)
 
+class Goods(models.Model):
+    goods_number = models.CharField(max_length=11)
+    goods_name = models.CharField(max_length=32)
+    goods_price = models.FloatField()
+    goods_count = models.IntegerField()
+    goods_location = models.CharField(max_length=254)
+    goods_safe_date = models.IntegerField()
+    goods_pro_time = models.DateField(auto_now=True)
 # Create your models here.

@@ -1,6 +1,6 @@
 import hashlib
 
-from django.shortcuts import render,HttpResponseRedirect
+from django.shortcuts import render,HttpResponseRedirect,HttpResponse
 from LoginUser.models import *
 
 def loginValid(fun):
@@ -76,5 +76,24 @@ def logout(request):
 def index(request):
     return render(request,"index.html",locals())
 
+@loginValid
+def goods_list(request):
+    return render(request,"goods_list.html")
 
+import random
+
+def add_goods(request):
+    goods_name = "菠菜、甜菜、芹菜、胡萝卜、小茴香、芫荽、番茄、茄子、辣椒、黄瓜、西葫芦、南瓜、芜菁、白菜、甘蓝、芥菜四季豆 豌豆 胡豆 毛豆 土豆 黄豆芽 绿豆芽、豆芽 甘蓝菜 包心菜; 大白菜 小白菜 水白菜 西洋菜 通心菜 潺菜 花椰菜 西兰花 空心菜 金针菜 芥菜 芹菜 蒿菜 甜菜 紫菜 生菜 菠菜 韭菜 香菜 发菜 榨菜 雪里红 莴苣 芦笋 竹笋 笋干 韭黄 白萝卜 胡萝卜 荸荠 菜瓜 丝瓜 水瓜 南瓜 苦瓜 黄瓜 青瓜 付子瓜 冬瓜".replace(" ","、")
+    goods_name = goods_name.split("、")
+    goods_address = "河北省，山西省，辽宁省，吉林省，黑龙江省，江苏省，浙江省，安徽省，福建省，江西省，山东省，河南省，湖北省，湖南省，广东省，海南省，四川省，贵州省，云南省，陕西省，甘肃省，青海省，台湾省".split("，")
+    for j,i in enumerate(range(100),1):
+        goods = Goods()
+        goods.goods_number = str(j).zfill(5)
+        goods.goods_name = random.choice(goods_address)+random.choice(goods_name)
+        goods.goods_price = random.random()*100
+        goods.goods_count = random.randint(30,100)
+        goods.goods_location = random.choice(goods_address)
+        goods.goods_safe_date = random.randint(1,36)
+        goods.save()
+    return HttpResponse("hello world")
 # Create your views here.

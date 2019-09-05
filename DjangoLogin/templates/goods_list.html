@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}
+    商品列表页
+{% endblock %}
+
+{% block label %}
+    在售商品
+{% endblock %}
+
+{% block content %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>商品编号</th>
+                <th>商品名称</th>
+                <th>商品价格</th>
+                <th>商品数量</th>
+                <th>商品产地</th>
+                <th>商品保质期</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>00001</td>
+                <td>张家口大白菜</td>
+                <td>18.88$</td>
+                <td>360</td>
+                <td>秦皇岛</td>
+                <td>3年</td>
+                <td>
+                    <button class="btn btn-primary" type="button">修改</button>
+                    <button class="btn btn-warning" type="button">下架</button>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot></tfoot>
+    </table>
+{% endblock %}
