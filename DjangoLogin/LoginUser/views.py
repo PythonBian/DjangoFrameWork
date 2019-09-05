@@ -2,6 +2,7 @@ import hashlib
 
 from django.core.paginator import Paginator
 from django.shortcuts import render,HttpResponseRedirect,HttpResponse
+from django.http import JsonResponse
 
 from LoginUser.models import *
 
@@ -89,7 +90,7 @@ def goods_list(request,status,page=1):
         goodses = Goods.objects.all()
     all_goods = Paginator(goodses,10)
     goods_list = all_goods.page(page)
-    return render(request,"goods_list.html",locals())
+    return render(request,"vue_goods_list.html",locals())
 
 def goods_status(request,state,id):
     id = int(id)
@@ -105,7 +106,35 @@ def goods_status(request,state,id):
 
 
 
+def goods_list_api(request,status,page=1):
+    page = int(page)
+    if status == "1":
+        goodses = Goods.objects.filter(goods_status = 1)
+    elif status == "0":
+        goodses = Goods.objects.filter(goods_status = 0)
+    else:
+        goodses = Goods.objects.all()
+    all_goods = Paginator(goodses,10)
+    goods_list = all_goods.page(page)
 
+    res = []
+    for g in goods_list:
+        res.append({
+            "goods_number": g.goods_number,
+            "goods_name": g.goods_name,
+            "goods_price": g.goods_price,
+            "goods_count": g.goods_count,
+            "goods_location": g.goods_location,
+            "goods_safe_date": g.goods_safe_date,
+            "goods_pro_time": g.goods_pro_time,
+            "goods_status": g.goods_status
+        })
+    result = {
+        "data": res,
+        "page_range": list(all_goods.page_range),
+        "page":"page"
+    }
+    return JsonResponse(result)
 
 
 

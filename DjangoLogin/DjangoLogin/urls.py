@@ -25,6 +25,9 @@ urlpatterns = [
     path('logout/', logout),
     path('goods_list/', goods_list),
     re_path('goods_list/(?P<page>\d+)/(?P<status>[01])/', goods_list),
+
     re_path('goods_status/(?P<state>\w+)/(?P<id>\d+)/', goods_status),
-    # path('add_goods/', add_goods),
+]
+urlpatterns += [
+    re_path('goods_list_api/(?P<page>\d+)/(?P<status>[01])/', goods_list_api),
 ]

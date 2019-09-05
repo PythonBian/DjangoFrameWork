@@ -2,18 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3fd59c7f-c458-4185-9097-be57e7080c46" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/api_goods_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/vueExample.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/vue_goods_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DjangoLogin/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/DjangoLogin/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LoginUser/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/LoginUser/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LoginUser/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/LoginUser/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/goods_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/goods_list.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/DjangoLogin$apiRequest.coverage" NAME="apiRequest Coverage Results" MODIFIED="1567666530529" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.." />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -54,53 +58,72 @@
         <counts>
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.13" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="8" />
+          <entry key="html" value="15" />
           <entry key="loginuser_goods" value="1" />
           <entry key="loginuser_loginuser" value="1" />
-          <entry key="py" value="6" />
+          <entry key="py" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Database Element" value="2" />
-          <entry key="HTML" value="8" />
-          <entry key="Python" value="6" />
+          <entry key="HTML" value="15" />
+          <entry key="Python" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Django Console" value="33" />
-          <entry key="html" value="936" />
-          <entry key="py" value="2575" />
+          <entry key="html" value="2325" />
+          <entry key="py" value="2908" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="936" />
-          <entry key="Python" value="2608" />
+          <entry key="HTML" value="2325" />
+          <entry key="Python" value="2941" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LoginUser/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="101" column="28" selection-start-line="101" selection-start-column="28" selection-end-line="101" selection-end-column="28" />
+            <state relative-caret-position="-564">
+              <caret line="92" column="46" selection-start-line="92" selection-start-column="46" selection-end-line="92" selection-end-column="46" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
-                <marker date="1567653286860" expanded="true" signature="183:559" ph="..." />
-                <marker date="1567653286860" expanded="true" signature="585:692" ph="..." />
-                <marker date="1567653286860" expanded="true" signature="3068:3359" ph="..." />
-                <marker date="1567653286860" expanded="true" signature="3397:4278" ph="..." />
+                <marker date="1567672623447" expanded="true" signature="220:596" ph="..." />
+                <marker date="1567672623447" expanded="true" signature="622:729" ph="..." />
+                <marker date="1567672623447" expanded="true" signature="3109:4321" ph="..." />
+                <marker date="1567672623447" expanded="true" signature="4359:5240" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/vue_goods_list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="393">
+              <caret line="75" column="73" selection-start-line="75" selection-start-column="73" selection-end-line="75" selection-end-column="73" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/goods_list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="327">
+              <caret line="51" column="82" lean-forward="true" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="82" />
             </state>
           </provider>
         </entry>
@@ -108,8 +131,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DjangoLogin/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+            <state relative-caret-position="525">
+              <caret line="31" column="27" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="27" />
               <folding>
                 <element signature="e#635#667#0" expanded="true" />
               </folding>
@@ -118,22 +141,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/goods_list.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="48" column="37" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
-              <folding>
-                <element signature="e#1120#1161#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LoginUser/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="21" column="16" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="16" />
+            <state relative-caret-position="195">
+              <caret line="14" column="16" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="16" />
               <folding>
                 <marker date="1567652151708" expanded="true" signature="60:500" ph="..." />
                 <marker date="1567652151708" expanded="true" signature="584:967" ph="..." />
@@ -183,9 +194,13 @@
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/LoginUser/models.py" />
         <option value="$PROJECT_DIR$/templates/base.html" />
-        <option value="$PROJECT_DIR$/DjangoLogin/urls.py" />
         <option value="$PROJECT_DIR$/templates/goods_list.html" />
+        <option value="$PROJECT_DIR$/../apiRequest.py" />
+        <option value="$PROJECT_DIR$/templates/api_goods_list.html" />
+        <option value="$PROJECT_DIR$/templates/vueExample.html" />
         <option value="$PROJECT_DIR$/LoginUser/views.py" />
+        <option value="$PROJECT_DIR$/DjangoLogin/urls.py" />
+        <option value="$PROJECT_DIR$/templates/vue_goods_list.html" />
       </list>
     </option>
   </component>
@@ -239,6 +254,25 @@
             <path>
               <item name="DjangoLogin" type="b2602c69:ProjectViewProjectNode" />
               <item name="DjangoLogin" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DjangoLogin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DjangoLogin" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DjangoLogin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DjangoLogin" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="jquery" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DjangoLogin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DjangoLogin" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -268,7 +302,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.apiRequest">
+    <configuration name="apiRequest" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="DjangoLogin" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/.." />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../apiRequest.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="DjangoLogin" type="Python.DjangoServer" factoryName="Django server">
       <module name="DjangoLogin" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -293,6 +349,15 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Django server.DjangoLogin" />
+      <item itemvalue="Python.apiRequest" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.apiRequest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -316,8 +381,8 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32974428" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39973083" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.36473754" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39973083" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -341,17 +406,6 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/LoginUser/views.py</url>
-          <line>94</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
     <entry file="file://C:/ProgramData/Anaconda3/envs/DjangoPath/Lib/site-packages/django/db/models/fields/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -371,9 +425,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1947">
           <caret line="59" column="14" selection-start-line="59" selection-start-column="14" selection-end-line="59" selection-end-column="14" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -423,20 +474,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DjangoLogin/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
-          <folding>
-            <element signature="e#635#667#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/LoginUser/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="21" column="16" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="16" />
+        <state relative-caret-position="195">
+          <caret line="14" column="16" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="16" />
           <folding>
             <marker date="1567652151708" expanded="true" signature="60:500" ph="..." />
             <marker date="1567652151708" expanded="true" signature="584:967" ph="..." />
@@ -444,27 +485,62 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../apiRequest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="7" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/vueExample.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" selection-end-line="50" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/api_goods_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="20" column="61" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DjangoLogin/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="31" column="27" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="27" />
+          <folding>
+            <element signature="e#635#667#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/goods_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="48" column="37" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
-          <folding>
-            <element signature="e#1120#1161#0#HTML" expanded="true" />
-          </folding>
+        <state relative-caret-position="327">
+          <caret line="51" column="82" lean-forward="true" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="82" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LoginUser/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="101" column="28" selection-start-line="101" selection-start-column="28" selection-end-line="101" selection-end-column="28" />
+        <state relative-caret-position="-564">
+          <caret line="92" column="46" selection-start-line="92" selection-start-column="46" selection-end-line="92" selection-end-column="46" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1567653286860" expanded="true" signature="183:559" ph="..." />
-            <marker date="1567653286860" expanded="true" signature="585:692" ph="..." />
-            <marker date="1567653286860" expanded="true" signature="3068:3359" ph="..." />
-            <marker date="1567653286860" expanded="true" signature="3397:4278" ph="..." />
+            <marker date="1567672623447" expanded="true" signature="220:596" ph="..." />
+            <marker date="1567672623447" expanded="true" signature="622:729" ph="..." />
+            <marker date="1567672623447" expanded="true" signature="3109:4321" ph="..." />
+            <marker date="1567672623447" expanded="true" signature="4359:5240" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/vue_goods_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="75" column="73" selection-start-line="75" selection-start-column="73" selection-end-line="75" selection-end-column="73" />
         </state>
       </provider>
     </entry>

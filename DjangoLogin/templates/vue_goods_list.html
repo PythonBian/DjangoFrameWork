@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block title %}
+    商品列表页
+{% endblock %}
+{% block style %}
+    <script src="/static/js/vue.min.js"></script>
+    <script src="/static/js/vue-resource.js"></script>
+{% endblock %}
+
+{% block label %}
+    在售商品
+{% endblock %}
+
+{% block content %}
+    {% verbatim %}
+    <div id="content">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>商品编号</th>
+                <th>商品名称</th>
+                <th>商品价格</th>
+                <th>商品数量</th>
+                <th>商品产地</th>
+                <th>商品保质期</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr v-for="goods in goods_list">
+                <td>{{ goods.goods_number }}</td>
+                <td>{{ goods.goods_name }}</td>
+                <td>{{ goods.goods_price }}</td>
+                <td>{{ goods.goods_count }}</td>
+                <td>{{ goods.goods_location }}</td>
+                <td>{{ goods.goods_safe_date }}</td>
+                <td>
+                    <button class="btn btn-primary">修改</button>
+                    <button class="btn btn-warning">下架</button>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot></tfoot>
+    </table>
+    <ul style="float: right; margin-right: 100px;" class="pagination">
+        <li class="paginate_button page-item previous" v-for="p in page_range">
+            <a class="page-link" v-bind:href="p">{{ p }}</a>
+        </li>
+    </ul>
+    </div>
+    {% endverbatim %}
+{% endblock %}
+{% block script %}
+    <script>
+        //声明使用vue-resource
+        Vue.use(VueResource);
+        var vue = new Vue(
+            {
+                el:"#content",
+                data: {
+                    goods_list:[
+                        {"goods_number": "00001","goods_name": "老边大白菜","goods_price": "1￥","goods_count": "80","goods_location": "张家口","goods_safe_date":"3个月"},
+                        {"goods_number": "00002","goods_name": "老王老毛桃","goods_price": "1￥","goods_count": "80","goods_location": "张家口","goods_safe_date":"3个月"},
+                        {"goods_number": "00003","goods_name": "老温大萝卜","goods_price": "1￥","goods_count": "80","goods_location": "张家口","goods_safe_date":"3个月"},
+                        {"goods_number": "00004","goods_name": "老张大葱","goods_price": "1￥","goods_count": "80","goods_location": "张家口","goods_safe_date":"3个月"},
+                        {"goods_number": "00005","goods_name": "老申大蘑菇","goods_price": "1￥","goods_count": "80","goods_location": "张家口","goods_safe_date":"3个月"},
+                    ],
+                    page_range:[1,2,3,4]
+                },
+                created: function () {
+                    var url = "/goods_list_api/1/1/";
+                    this.$http.get(url).then(
+                        function (data) {
+                            this.goods_list = data["data"]["data"];//绑定后端数据到vue
+                            this.page_range = data["data"]["page_range"];
+                            console.log(data["data"]["data"]);
+                            console.log(data["data"]["page_range"])
+
+                        },//success
+                        function (err) {
+                            console.log(error)
+                        }//error
+                    )//向url发送get请求,请求完成之后，执行内部函数
+                }// 初始化
+            }
+        )
+    </script>
+{% endblock %}

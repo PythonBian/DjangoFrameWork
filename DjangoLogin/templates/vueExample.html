@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/static/js/vue.min.js"></script>
+</head>
+<body>
+    {% verbatim %} <!--在当前标签之内的django模板标签失效-->
+    <div id="panel">
+        <p>
+            内容绑定 {{ name }}
+        </p>
+        <hr>
+        <p v-bind:id="style">
+            属性绑定
+        </p>
+        <hr>
+        <p v-if="gender">
+            判断绑定 v-if
+        </p>
+        <p v-show="gender">
+            判断绑定 v-show
+        </p>
+        <hr>
+        <button v-on:click="alert">click</button>
+        <hr>
+        循环绑定
+        <p v-for="p in project">{{ p }}</p>
+    </div>
+    {% endverbatim %}
+    <script>
+        var vue = new Vue(
+            {
+                el:"#panel",
+                data:{
+                    name: "老边" ,
+                    style: "red",
+                    gender: 0,
+                    project: ["python","php","java","js"]
+                },
+                methods: {
+                    "alert": function () {
+                        alert("hello world")
+                    }
+                }
+            }
+        )
+    </script>
+</body>
+</html>
