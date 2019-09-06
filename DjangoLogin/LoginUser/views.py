@@ -135,9 +135,109 @@ def goods_list_api(request,status,page=1):
         "page":"page"
     }
     return JsonResponse(result)
+from django.views.decorators.csrf import csrf_exempt
+from django.views import View
+import json
+#https://getman.cn/
 
+class GoodsView(View):
+    """
+    可以自定义http所有的请求的方法的处理
+     http_method_names = ['get', 'post', 'put', 'patch', 'delete', 'head', 'options', 'trace']
+    """
+    def __init__(self,**kwargs):
+        super().__init__(**kwargs) #保证父类的init正常运行
+        self.result = {
+            "version": "1.0",
+            "code": 200, #按照http状态码
+            "data":""
+        }#定义一个规范的返回格式
+        self.obj = Goods
+    def get(self,request):
+        """
+            当前方法用于处理get请求
+            如果传递id,就返回对应id的数据
+            如果不传递就返回所有数据
+        """
+        id = request.GET.get("id")
+        if id:
+            result = self.obj.objects.get(id = int(id))
+            data = {
+                    "goods_number":result.goods_number,
+                    "goods_name": result.goods_name,
+                    "goods_price": result.goods_price,
+                    "goods_count": result.goods_count,
+                    "goods_location": result.goods_location,
+                    "goods_safe_date": result.goods_safe_date,
+                    "goods_pro_time": result.goods_pro_time,
+                    }
+        else:
+            result = self.obj.objects.all()
+            data = []
+            for res in result:
+                data.append(
+                    {
+                        "goods_number": res.goods_number,
+                        "goods_name": res.goods_name,
+                        "goods_price": res.goods_price,
+                        "goods_count": res.goods_count,
+                        "goods_location": res.goods_location,
+                        "goods_safe_date": res.goods_safe_date,
+                        "goods_pro_time": res.goods_pro_time,
+                    }
+                )
+        self.result["data"] = data
+        return JsonResponse(self.result)
 
+    def post(self,request):
+        """
+        当前方法用于处理post请求
+        用来保存数据
+        """
+        goods = self.obj()
+        goods.goods_number = request.POST.get("goods_number")
+        goods.goods_name = request.POST.get("goods_name")
+        goods.goods_price = request.POST.get("goods_price")
+        goods.goods_count = request.POST.get("goods_count")
+        goods.goods_location = request.POST.get("goods_location")
+        goods.goods_safe_date = request.POST.get("goods_safe_date")
+        goods.goods_pro_time = request.POST.get("goods_pro_time")
+        goods.goods_status = 1
+        goods.save()
+        self.result["data"] = {
+            "id":goods.id,
+            "name":goods.goods_name,
+            "data":"save success"
+        }
+        return JsonResponse(self.result)
 
+    def put(self,request):
+        "当前方法用于处理put请求"
+        print(request.body)
+        put = json.loads(request.body.decode()) #json.loads不能解字节 b''
+        id = put.get("id")
+        goods_number = put.get("goods_number")
+        goods = self.obj.objects.get(id = id)
+        goods.goods_number = goods_number
+        goods.save()
+        self.result["data"] = {
+            "id": goods.id,
+            "name": goods.goods_name,
+            "data": "change success"
+        }
+        return JsonResponse(self.result["data"])
+
+    def delete(self,request):
+        "当前方法用于处理delete请求"
+        print(request.body)
+        delete = json.loads(request.body.decode())  # json.loads不能解字节 b''
+        id = delete.get("id")
+        self.obj.objects.get(id = id).delete()
+        self.result["data"] = {
+            "id": id,
+            "data": "delete success"
+        }
+        return JsonResponse({"methods": "delete", "state": "success"})
 
 import random
 

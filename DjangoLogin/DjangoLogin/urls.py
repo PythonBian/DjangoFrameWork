@@ -28,6 +28,9 @@ urlpatterns = [
 
     re_path('goods_status/(?P<state>\w+)/(?P<id>\d+)/', goods_status),
 ]
+from django.views.decorators.csrf import csrf_exempt
+
 urlpatterns += [
     re_path('goods_list_api/(?P<page>\d+)/(?P<status>[01])/', goods_list_api),
+    path('goods/',csrf_exempt(GoodsView.as_view()))
 ]
