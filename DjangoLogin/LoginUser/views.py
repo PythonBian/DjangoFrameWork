@@ -91,7 +91,7 @@ def goods_list(request,status,page=1):
     all_goods = Paginator(goodses,10)
     goods_list = all_goods.page(page)
     return render(request,"vue_goods_list.html",locals())
-
+@loginValid
 def goods_status(request,state,id):
     id = int(id)
     goods = Goods.objects.get(id = id)
@@ -102,6 +102,23 @@ def goods_status(request,state,id):
     goods.save()
     url = request.META.get("HTTP_REFERER","/goods_list/1/1")
     return HttpResponseRedirect(url)
+
+@loginValid
+def personal_info(request):
+    user_id = request.COOKIES.get("user_id")
+    user = LoginUser.objects.get(id = int(user_id))
+    if request.method == "POST":
+        user.username = request.POST.get("username")
+        user.gender = request.POST.get("gender")
+        user.age = request.POST.get("age")
+        user.phone_number = request.POST.get("phone_number")
+        user.address = request.POST.get("address")
+        user.photo = request.FILES.get("photo")
+        user.save()
+    return render(request,"personal_info.html",locals())
+
+
+
 
 
 
@@ -238,6 +255,27 @@ class GoodsView(View):
             "data": "delete success"
         }
         return JsonResponse({"methods": "delete", "state": "success"})
+
+from rest_framework import viewsets,mixins
+from LoginUser.serializer import *
+
+# class GoodsViewSet(viewsets.ModelViewSet):
+#     queryset = Goods.objects.all() #接口数据的源
+#     serializer_class = GoodsSerializer
+class GoodsViewSet(mixins.CreateModelMixin, #创建的接口方法
+                   mixins.RetrieveModelMixin, #查询部分方法
+                   mixins.UpdateModelMixin, #修改的方法
+                   mixins.DestroyModelMixin, #删除的方法
+                   mixins.ListModelMixin, #展示的方法
+                   viewsets.GenericViewSet):
+    queryset = Goods.objects.all() #接口数据的源
+    serializer_class = GoodsSerializer
+
+
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = LoginUser.objects.all()  # 接口数据的源
+    serializer_class = UserSerializer
+
 
 import random
 
