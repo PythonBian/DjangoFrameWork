@@ -12,6 +12,11 @@ class LoginUser(models.Model):
     address = models.TextField(null = True,blank = True)
     user_type = models.IntegerField(default=0) #买家0  卖家1  管理员2
 
+
+class GoodsType(models.Model):
+    type_label = models.CharField(max_length = 32)
+    type_description = models.TextField()
+
 class Goods(models.Model):
     goods_number = models.CharField(max_length=11)
     goods_name = models.CharField(max_length=32)
@@ -21,6 +26,11 @@ class Goods(models.Model):
     goods_safe_date = models.IntegerField()
     goods_pro_time = models.DateField(auto_now=True)
     goods_status = models.IntegerField() #0为下架，1 为在售
+
+    picture = models.ImageField(upload_to="seller/images",default="seller/images/by.jpg")
+    goods_type = models.ForeignKey(to = GoodsType,on_delete = models.CASCADE,default=1)
+    goods_store = models.ForeignKey(to = LoginUser,on_delete = models.CASCADE,default=1)
+
 # Create your models here.
 
 # Create your models here.

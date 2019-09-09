@@ -1,0 +1,50 @@
+{% extends "seller/base.html" %}
+
+{% block title %}
+    添加商品
+{% endblock %}
+
+{% block label %}
+    添加商品
+{% endblock %}
+
+{% block content %}
+    <form method="post" class="">
+        <div class="form-group">
+            <input class="form-control form-control-user" type="text" name="goods_number" placeholder="商品编号">
+        </div>
+        <div class="form-group">
+            <input class="form-control form-control-user" type="text" name="goods_name" placeholder="商品名称">
+        </div>
+        <div class="form-group">
+            <input class="form-control form-control-user" type="text" name="goods_price" placeholder="商品价格">
+        </div>
+        <div class="form-group">
+            <input class="form-control form-control-user" type="text" name="goods_count" placeholder="商品数量">
+        </div>
+        <div class="form-group">
+            <input class="form-control form-control-user" type="text" name="goods_location" placeholder="商品产地">
+        </div>
+        <div class="form-group">
+            <input class="form-control form-control-user" type="text" name="goods_safe_date" placeholder="商品保质期">
+        </div>
+        <div class="form-group">
+            <input class="form-control form-control-user" type="text" name="goods_pro_time" placeholder="商品生产日期">
+        </div>
+        <div class="form-group">
+            <select class="form-control form-control-user" name="goods_type">
+                <option value="0">商品类型</option>
+                {% for goods_type in goods_type_list %}
+                    <option value="{{ goods_type.id }}">{{ goods_type.type_label }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <input class="form-control form-control-user" type="file" name="picture" placeholder="商品图片">
+        </div>
+        <div class="form-group">
+            <input class="btn btn-primary btn-block" type="submit" value="提交">
+        </div>
+
+    </form>
+{% endblock %}

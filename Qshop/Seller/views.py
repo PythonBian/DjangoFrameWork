@@ -13,7 +13,7 @@ def loginValid(fun):
         if cookie_username and session_username and cookie_username == session_username:
             return fun(request,*args,**kwargs)
         else:
-            return HttpResponseRedirect("/login/")
+            return HttpResponseRedirect("/Seller/login/")
     return inner
 
 def setPassword(password):
@@ -54,7 +54,7 @@ def login(request):
                 db_password = user.password
                 password = setPassword(password)
                 if db_password == password:
-                    response = HttpResponseRedirect("/index/")
+                    response = HttpResponseRedirect("/Seller/index/")
                     response.set_cookie("username",user.username)
                     response.set_cookie("user_id", user.id)
                     request.session["username"] = user.username
@@ -116,3 +116,8 @@ def personal_info(request):
         user.photo = request.FILES.get("photo")
         user.save()
     return render(request,"seller/personal_info.html",locals())
+
+@loginValid
+def goods_add(request):
+    goods_type_list = GoodsType.objects.all()
+    return render(request,"seller/goods_add.html",locals())
