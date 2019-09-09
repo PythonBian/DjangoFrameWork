@@ -27,7 +27,7 @@ class Goods(models.Model):
     goods_pro_time = models.DateField(auto_now=True)
     goods_status = models.IntegerField() #0为下架，1 为在售
 
-    picture = models.ImageField(upload_to="seller/images",default="seller/images/by.jpg")
+    picture = models.ImageField(upload_to="images")
     goods_type = models.ForeignKey(to = GoodsType,on_delete = models.CASCADE,default=1)
     goods_store = models.ForeignKey(to = LoginUser,on_delete = models.CASCADE,default=1)
 

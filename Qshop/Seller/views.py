@@ -81,16 +81,19 @@ def index(request):
 
 @loginValid
 def goods_list(request,status,page=1):
+    user_id = request.COOKIES.get("user_id")
+    user = LoginUser.objects.get(id = int(user_id))
     page = int(page)
     if status == "1":
-        goodses = Goods.objects.filter(goods_status = 1)
+        goodses = Goods.objects.filter(goods_store = user,goods_status = 1)
     elif status == "0":
-        goodses = Goods.objects.filter(goods_status = 0)
+        goodses = Goods.objects.filter(goods_store = user,goods_status = 0)
     else:
         goodses = Goods.objects.all()
     all_goods = Paginator(goodses,10)
     goods_list = all_goods.page(page)
     return render(request,"seller/goods_list.html",locals())
+
 @loginValid
 def goods_status(request,state,id):
     id = int(id)
@@ -120,4 +123,31 @@ def personal_info(request):
 @loginValid
 def goods_add(request):
     goods_type_list = GoodsType.objects.all()
+    if request.method == "POST":
+        data = request.POST
+        files = request.FILES
+
+        goods = Goods()
+        #常规保存
+        goods.goods_number = data.get("goods_number")
+        goods.goods_name = data.get("goods_name")
+        goods.goods_price = data.get("goods_price")
+        goods.goods_count = data.get("goods_count")
+        goods.goods_location = data.get("goods_location")
+        goods.goods_safe_date = data.get("goods_safe_date")
+        goods.goods_pro_time = data.get("goods_pro_time") #出厂日期格式必须是yyyy-mm-dd格式
+        goods.goods_status = 1
+
+        #保存外键类型
+        goods_type_id = int(data.get("goods_type"))
+        goods.goods_type = GoodsType.objects.get(id = goods_type_id)
+        #保存图片
+        picture = files.get("picture")
+        goods.picture = picture
+        #保存对应的卖家
+        user_id = request.COOKIES.get("user_id")
+        goods.goods_store = LoginUser.objects.get(id = int(user_id))
+
+        goods.save()
+
     return render(request,"seller/goods_add.html",locals())

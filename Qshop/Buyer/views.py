@@ -1,6 +1,6 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from Seller.models import LoginUser
+from Seller.models import *
 from Seller.views import setPassword
 
 def login(request):
@@ -30,7 +30,8 @@ def register(request):
     return render(request, "buyer/register.html")
 
 def index(request):
-    return render(request,"buyer/index.html")
+    goods_type = GoodsType.objects.all()
+    return render(request,"buyer/index.html",locals())
 
 def logout(request):
     return render(request,"buyer/index.html")

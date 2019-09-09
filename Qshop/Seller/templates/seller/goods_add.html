@@ -9,7 +9,8 @@
 {% endblock %}
 
 {% block content %}
-    <form method="post" class="">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
         <div class="form-group">
             <input class="form-control form-control-user" type="text" name="goods_number" placeholder="商品编号">
         </div>
