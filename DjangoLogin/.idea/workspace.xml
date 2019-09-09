@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3fd59c7f-c458-4185-9097-be57e7080c46" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/LoginUser/serializer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DjangoLogin/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/DjangoLogin/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DjangoLogin/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/DjangoLogin/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LoginUser/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/LoginUser/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LoginUser/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/LoginUser/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoginUser/quick_sort.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,34 +53,36 @@
     <session id="-796574623">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="auth_user_groups" value="1" />
           <entry key="html" value="19" />
-          <entry key="loginuser_goods" value="2" />
-          <entry key="loginuser_loginuser" value="2" />
-          <entry key="py" value="27" />
+          <entry key="loginuser_goods" value="3" />
+          <entry key="loginuser_loginuser" value="3" />
+          <entry key="py" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Database Element" value="5" />
+          <entry key="Database Element" value="7" />
           <entry key="HTML" value="19" />
-          <entry key="Python" value="27" />
+          <entry key="Python" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Django Console" value="33" />
-          <entry key="cell" value="4" />
+          <entry key="cell" value="11" />
           <entry key="html" value="2771" />
           <entry key="py" value="5129" />
         </counts>
@@ -94,69 +91,13 @@
         <counts>
           <entry key="HTML" value="2771" />
           <entry key="Python" value="5162" />
-          <entry key="Scratch" value="4" />
+          <entry key="Scratch" value="11" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/LoginUser/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="110" selection-start-line="110" selection-end-line="110" />
-              <folding>
-                <element signature="e#0#14#0" expanded="true" />
-                <element signature="e#4460#7934#0" />
-                <marker date="1567759691747" expanded="true" signature="220:596" ph="..." />
-                <marker date="1567759691747" expanded="true" signature="622:729" ph="..." />
-                <marker date="1567759691747" expanded="true" signature="3120:9232" ph="..." />
-                <marker date="1567759691747" expanded="true" signature="3897:3962" ph="..." />
-                <marker date="1567759691747" expanded="true" signature="5022:9232" ph="..." />
-                <marker date="1567759691747" expanded="true" signature="5191:5405" ph="..." />
-                <marker date="1567759691747" expanded="true" signature="8626:9232" ph="..." />
-                <marker date="1567759691747" expanded="true" signature="9270:10151" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DjangoLogin/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="28" column="23" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="23" />
-              <folding>
-                <element signature="e#635#667#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LoginUser/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="11" column="11" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="11" />
-              <folding>
-                <marker date="1567757180038" expanded="true" signature="60:510" ph="..." />
-                <marker date="1567757180038" expanded="true" signature="594:977" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/personal_info.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="19" column="23" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -242,21 +183,6 @@
               <item name="DjangoLogin" type="b2602c69:ProjectViewProjectNode" />
               <item name="DjangoLogin" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="DjangoLogin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DjangoLogin" type="462c0819:PsiDirectoryNode" />
-              <item name="DjangoLogin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DjangoLogin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DjangoLogin" type="462c0819:PsiDirectoryNode" />
-              <item name="LoginUser" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DjangoLogin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DjangoLogin" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -268,7 +194,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Qshop" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -381,14 +307,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.36473754" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.36473754" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39973083" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -412,17 +337,6 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/LoginUser/views.py</url>
-          <line>110</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://C:/ProgramData/Anaconda3/envs/DjangoPath/Lib/site-packages/django/db/models/fields/__init__.py">
@@ -548,13 +462,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://32a95f26-18b9-4cf2-b976-8877bdaf5ece/schema/main/table/loginuser_goods">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DjangoLogin/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
@@ -585,6 +492,13 @@
     <entry file="file://$PROJECT_DIR$/DjangoLogin/wsgi.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="56" column="22" selection-start-line="56" selection-start-column="22" selection-end-line="56" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="das://32a95f26-18b9-4cf2-b976-8877bdaf5ece/schema/main/table/loginuser_loginuser">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -592,20 +506,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DjangoLogin/urls.py">
+    <entry file="das://32a95f26-18b9-4cf2-b976-8877bdaf5ece/schema/main/table/loginuser_goods">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LoginUser/quick_sort.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LoginUser/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="28" column="23" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="23" />
+        <state relative-caret-position="98">
+          <caret line="109" column="32" lean-forward="true" selection-start-line="109" selection-start-column="32" selection-end-line="109" selection-end-column="32" />
           <folding>
-            <element signature="e#635#667#0" expanded="true" />
+            <element signature="e#0#14#0" expanded="true" />
+            <marker date="1567759691747" expanded="true" signature="220:596" ph="..." />
+            <marker date="1567759691747" expanded="true" signature="622:729" ph="..." />
+            <marker date="1567759691747" expanded="true" signature="3120:9232" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
+    <entry file="file://$PROJECT_DIR$/DjangoLogin/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="56" column="22" selection-start-line="56" selection-start-column="22" selection-end-line="56" selection-end-column="22" />
+        <state relative-caret-position="353">
+          <caret line="28" column="23" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="23" />
+          <folding>
+            <element signature="e#635#667#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -624,25 +554,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
           <caret line="19" column="23" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LoginUser/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="110" selection-start-line="110" selection-end-line="110" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-            <element signature="e#4460#7934#0" />
-            <marker date="1567759691747" expanded="true" signature="220:596" ph="..." />
-            <marker date="1567759691747" expanded="true" signature="622:729" ph="..." />
-            <marker date="1567759691747" expanded="true" signature="3120:9232" ph="..." />
-            <marker date="1567759691747" expanded="true" signature="3897:3962" ph="..." />
-            <marker date="1567759691747" expanded="true" signature="5022:9232" ph="..." />
-            <marker date="1567759691747" expanded="true" signature="5191:5405" ph="..." />
-            <marker date="1567759691747" expanded="true" signature="8626:9232" ph="..." />
-            <marker date="1567759691747" expanded="true" signature="9270:10151" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
