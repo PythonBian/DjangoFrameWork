@@ -123,7 +123,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR,"static"),
 )
-#STATIC_ROOT = os.path.join(BASE_DIR,"static") #静态文件的根目录，和STATICFILES_DIRS，MEDIA_URL，MEDIA_ROOT有冲突
+# STATIC_ROOT = os.path.join(BASE_DIR,"static") #静态文件的根目录，和STATICFILES_DIRS，MEDIA_URL，MEDIA_ROOT有冲突
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR,"static"),

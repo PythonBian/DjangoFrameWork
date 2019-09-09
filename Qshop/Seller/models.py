@@ -10,6 +10,7 @@ class LoginUser(models.Model):
     age = models.IntegerField(null = True,blank = True)
     gender = models.CharField(max_length = 32,null = True,blank = True)
     address = models.TextField(null = True,blank = True)
+    user_type = models.IntegerField(default=0) #买家0  卖家1  管理员2
 
 class Goods(models.Model):
     goods_number = models.CharField(max_length=11)
