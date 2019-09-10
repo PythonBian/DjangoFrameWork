@@ -4,6 +4,16 @@ from django.shortcuts import render
 from Seller.models import *
 from Seller.views import setPassword
 
+def loginValid(fun):
+    def inner(request,*args,**kwargs):
+        cookie_user = request.COOKIES.get("username")
+        session_user = request.session.get("username")
+        if cookie_user and session_user and cookie_user == session_user:
+            return fun(request,*args,**kwargs)
+        else:
+            return HttpResponseRedirect("/Buyer/login/")
+    return inner
+
 def login(request):
     if request.method == "POST":
         password = request.POST.get("pwd")
@@ -13,7 +23,11 @@ def login(request):
             db_password = user.password
             password = setPassword(password)
             if db_password == password:
-                return HttpResponseRedirect("/Buyer/index/")
+                response = HttpResponseRedirect("/Buyer/index/")
+                response.set_cookie("username",user.username)
+                response.set_cookie("user_id",user.id)
+                request.session["username"] = user.username
+                return response
     return render(request, "buyer/login.html")
 
 def register(request):
@@ -30,7 +44,12 @@ def register(request):
         return HttpResponseRedirect("/Buyer/login/")
     return render(request, "buyer/register.html")
 def logout(request):
-    return render(request,"buyer/index.html")
+    url = request.META.get("HTTP_REFERER", "/Buyer/index/")
+    response = HttpResponseRedirect(url)
+    for k in request.COOKIES:
+        response.delete_cookie(k)
+    del request.session["username"]
+    return response
 
 def index(request):
     goods_type = GoodsType.objects.all() #获取所有类型
@@ -75,6 +94,8 @@ def goods_detail(request,id):
     goods = Goods.objects.get(id = int(id))
     return render(request,"buyer/detail.html",locals())
 
-
+@loginValid
+def user_center_info(request):
+    return render(request,"buyer/user_center_info.html",locals())
 # Create your views here.
 
