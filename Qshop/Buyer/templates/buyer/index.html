@@ -49,8 +49,8 @@
 			<ul class="goods_list fl">
                 {% for goods in ty.goods_list %}
 				    <li>
-					<h4><a href="#">{{ goods.goods_name }}</a></h4>
-					<a href="#"><img src="/static/{{ goods.picture }}"></a>
+					<h4><a href="/Buyer/goods_detail/{{ goods.id }}/">{{ goods.goods_name }}</a></h4>
+					<a href="/Buyer/goods_detail/{{ goods.id }}/"><img src="/static/{{ goods.picture }}"></a>
 					<div class="prize">¥ {{ goods.goods_price }}</div>
 				</li>
                 {% endfor %}

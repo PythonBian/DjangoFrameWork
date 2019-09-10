@@ -1,4 +1,4 @@
-from django.urls import path,include
+from django.urls import path,re_path
 from Buyer.views import *
 
 urlpatterns = [
@@ -6,5 +6,6 @@ urlpatterns = [
     path('register/', register),
     path('index/', index),
     path('logout/', logout),
-    path('goods_list/', goods_list)
+    path('goods_list/', goods_list),
+    re_path('goods_detail/(?P<id>\d+)/', goods_detail),
 ]

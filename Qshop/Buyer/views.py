@@ -1,3 +1,4 @@
+from django.core.paginator import Paginator
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from Seller.models import *
@@ -70,7 +71,9 @@ def goods_list(request):
         recommend = goods_list[:lenth]
     return render(request,"buyer/goods_list.html",locals())
 
-
+def goods_detail(request,id):
+    goods = Goods.objects.get(id = int(id))
+    return render(request,"buyer/detail.html",locals())
 
 
 # Create your views here.

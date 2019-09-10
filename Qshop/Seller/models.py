@@ -27,6 +27,7 @@ class Goods(models.Model):
     goods_safe_date = models.IntegerField()
     goods_pro_time = models.DateField(auto_now=True)
     goods_status = models.IntegerField() #0为下架，1 为在售
+    goods_description = models.TextField(default="好吃还不贵")
 
     picture = models.ImageField(upload_to="images")
     goods_type = models.ForeignKey(to = GoodsType,on_delete = models.CASCADE,default=1)
