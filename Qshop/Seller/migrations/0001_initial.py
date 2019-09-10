@@ -24,7 +24,7 @@ class Migration(migrations.Migration):
                 ('goods_safe_date', models.IntegerField()),
                 ('goods_pro_time', models.DateField(auto_now=True)),
                 ('goods_status', models.IntegerField()),
-                ('picture', models.ImageField(default='seller/images/by.jpg', upload_to='seller/images')),
+                ('picture', models.ImageField(default='seller/images/1.jpg', upload_to='seller/images')),
             ],
         ),
         migrations.CreateModel(

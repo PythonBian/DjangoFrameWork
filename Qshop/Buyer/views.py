@@ -31,6 +31,12 @@ def register(request):
 
 def index(request):
     goods_type = GoodsType.objects.all()
+    result = []
+    for ty in goods_type:
+        goods = ty.goods_set.order_by("-goods_pro_time")
+        if len(goods) >= 4:
+            goods = goods[:4]
+            result.append({"type":ty,"goods_list":goods})
     return render(request,"buyer/index.html",locals())
 
 def logout(request):

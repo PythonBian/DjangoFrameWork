@@ -16,6 +16,7 @@ class LoginUser(models.Model):
 class GoodsType(models.Model):
     type_label = models.CharField(max_length = 32)
     type_description = models.TextField()
+    picture = models.ImageField(upload_to="images")
 
 class Goods(models.Model):
     goods_number = models.CharField(max_length=11)

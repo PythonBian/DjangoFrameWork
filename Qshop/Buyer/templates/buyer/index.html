@@ -85,10 +85,10 @@
 		</div>
 	</div>
 
-    {% for gt in goods_type %}
+    {% for ty in result %}
     	<div class="list_model">
 		<div class="list_title clearfix">
-			<h3 class="fl" id="model01">{{ gt.type_label }}</h3>
+			<h3 class="fl" id="model01">{{ ty.type.type_label }}</h3>
 			<div class="subtitle fl">
 				<span>|</span>
 				<a href="#">鲜芒</a>
@@ -99,13 +99,13 @@
 		</div>
 
 		<div class="goods_con clearfix">
-			<div class="goods_banner fl"><img src="/static/buyer/images/banner01.jpg"></div>
+			<div class="goods_banner fl"><img src="/static/{{ ty.type.picture }}"></div>
 			<ul class="goods_list fl">
-                {% for goods in gt.goods_set.all %}
+                {% for goods in ty.goods_list %}
 				    <li>
 					<h4><a href="#">{{ goods.goods_name }}</a></h4>
-					<a href="#"><img src="/static/buyer/images/goods/goods003.jpg"></a>
-					<div class="prize">¥ 30.00</div>
+					<a href="#"><img src="/static/{{ goods.picture }}"></a>
+					<div class="prize">¥ {{ goods.goods_price }}</div>
 				</li>
                 {% endfor %}
 			</ul>
