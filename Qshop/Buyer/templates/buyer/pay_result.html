@@ -1,0 +1,20 @@
+{% extends "buyer/base.html" %}
+
+{% block title %}
+    支付结果
+{% endblock %}
+
+{% block content %}
+    <div class="list_model">
+        <h1>支付成功</h1>
+        <table>
+        {% for k,v in request.GET.items %}
+            <tr>
+                <th>{{ k }}:</th>
+                <td>{{ v }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    </div>
+
+{% endblock %}

@@ -4,6 +4,7 @@ from django.shortcuts import render
 from Seller.models import *
 from Seller.views import setPassword
 from Buyer.models import *
+from alipay import AliPay
 
 def loginValid(fun):
     def inner(request,*args,**kwargs):
@@ -130,5 +131,40 @@ def pay_order(request):
         order.save()
     return render(request,"buyer/pay_order.html",locals())
 
+from Qshop.settings import alipay_public_key_string,alipay_private_key_string
+
+def AlipayViews(request):
+    order_number = request.GET.get("order_number")
+    order_total = request.GET.get("total")
+
+    # 实例化支付
+    alipay = AliPay(
+        appid=2016092200574016,
+        app_notify_url=None,
+        app_private_key_string=alipay_private_key_string,
+        alipay_public_key_string=alipay_public_key_string,
+        sign_type="RSA2"
+    )
+    # 实例化订单
+    order_string = alipay.api_alipay_trade_page_pay(
+        out_trade_no=order_number,  # 订单号
+        total_amount=str(order_total),  # 支付金额，是字符串
+        subject="生鲜交易",  # 支付主题
+        return_url="http://127.0.0.1:8000/Buyer/pay_result/",#结果返回的地址
+        notify_url="http://127.0.0.1:8000/Buyer/pay_result/" #订单状态发生改变后返回的地址
+    )  # 网页支付订单
+
+    # 拼接收款地址 = 支付宝网关+订单返回参数
+    result = "https://openapi.alipaydev.com/gateway.do?" + order_string
+
+    return HttpResponseRedirect(result)
+
+def pay_result(request):
+    out_trade_no = request.GET.get("out_trade_no")
+    if out_trade_no:
+        order = PayOrder.objects.get(order_number = out_trade_no)
+        order.order_status = 1
+        order.save()
+    return render(request,"buyer/pay_result.html",locals())
 # Create your views here.
 
