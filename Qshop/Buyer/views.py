@@ -3,6 +3,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from Seller.models import *
 from Seller.views import setPassword
+from Buyer.models import *
 
 def loginValid(fun):
     def inner(request,*args,**kwargs):
@@ -98,8 +99,35 @@ def goods_detail(request,id):
 def user_center_info(request):
     return render(request,"buyer/user_center_info.html",locals())
 
+import time
+import datetime
 @loginValid
 def pay_order(request):
+    goods_id = request.GET.get("goods_id")
+    count = request.GET.get("count")
+    if goods_id and count:
+        #保存订单表，但是保存总价
+        order = PayOrder()
+        order.order_number = str(time.time()).replace(".","")
+        order.order_data = datetime.datetime.now()
+        order.order_status = 0
+        order.order_user = LoginUser.objects.get(id = int(request.COOKIES.get("user_id"))) #订单对应的买家
+        order.save()
+        #保存订单详情
+        #查询商品的信息
+        goods = Goods.objects.get(id = int(goods_id))
+        order_info = OrderInfo()
+        order_info.order_id = order
+        order_info.goods_id = goods.id
+        order_info.goods_picture = goods.picture
+        order_info.goods_name = goods.goods_name
+        order_info.goods_count = int(count)
+        order_info.goods_price = goods.goods_price
+        order_info.goods_total_price = goods.goods_price*int(count)
+        order_info.store_id = goods.goods_store #商品卖家，goods.goods_store本身就是一条卖家数据
+        order_info.save()
+        order.order_total = order_info.goods_total_price
+        order.save()
     return render(request,"buyer/pay_order.html",locals())
 
 # Create your views here.
