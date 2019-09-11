@@ -97,5 +97,10 @@ def goods_detail(request,id):
 @loginValid
 def user_center_info(request):
     return render(request,"buyer/user_center_info.html",locals())
+
+@loginValid
+def pay_order(request):
+    return render(request,"buyer/pay_order.html",locals())
+
 # Create your views here.
 

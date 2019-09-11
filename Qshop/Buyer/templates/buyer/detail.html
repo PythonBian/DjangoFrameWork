@@ -11,20 +11,20 @@
 			<h3>{{ goods.goods_name }}</h3>
 			<p>{{ goods.goods_description }}</p>
 			<div class="prize_bar">
-				<span class="show_pirze">¥<em>{{ goods.goods_price }}</em></span>
+				<span class="show_pirze">¥<em id="price">{{ goods.goods_price }}</em></span>
 				<span class="show_unit">单  位：500g</span>
 			</div>
 			<div class="goods_num clearfix">
 				<div class="num_name fl">数 量：</div>
 				<div class="num_add fl">
-					<input type="text" class="num_show fl" value="1">
-					<a href="javascript:;" class="add fr">+</a>
-					<a href="javascript:;" class="minus fr">-</a>
+					<input id="number" type="text" class="num_show fl" value="1">
+					<a id="add" href="javascript:;" class="add fr">+</a>
+					<a id="reduce" href="javascript:;" class="minus fr">-</a>
 				</div>
 			</div>
-			<div class="total">总价：<em>16.80元</em></div>
+			<div class="total">总价：<em id="total">16.80</em><em>元</em></div>
 			<div class="operate_btn">
-				<a href="javascript:;" class="buy_btn">立即购买</a>
+				<a id="buy_now" href="javascript:;" class="buy_btn" >立即购买</a>
 				<a href="javascript:;" class="add_cart" id="add_cart">加入购物车</a>
 			</div>
 		</div>
@@ -64,4 +64,40 @@
 
 		</div>
 	</div>
+{% endblock %}
+
+{% block script %}
+    <script>
+        $("#add").click(
+            function () {
+                value = parseInt($("#number").val());
+                price = parseFloat($("#price").text());
+                value = value + 1;
+                $("#number").val(value);
+                total = value*price;
+                $("#total").text(total);
+            }
+        );
+        $("#reduce").click(
+            function () {
+                value = parseInt($("#number").val());
+                price = parseFloat($("#price").text());
+                if(value > 1){
+                    value = value - 1;
+                    $("#number").val(value);
+                }else {
+                    $("#number").val(1);
+                }
+                total = value*price;
+                $("#total").text(total);
+            }
+        );
+        $("#buy_now").click(
+            function () {
+                url = "/Buyer/pay_order/?goods_id={{ goods.id }}&count="+ $("#number").val();
+                window.location.href=url
+            }
+        )
+    </script>
+
 {% endblock %}
