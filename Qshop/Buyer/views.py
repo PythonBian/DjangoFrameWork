@@ -239,5 +239,12 @@ def cart(request):
     goods = Cart.objects.filter(cart_user = int(user_id)).order_by("-id")
     count = goods.count()
     return render(request,"buyer/cart.html",locals())
+
+@loginValid
+def user_center_order(request):
+    user_id = request.COOKIES.get("user_id")
+    user = LoginUser.objects.get(id = int(user_id))
+    order_list = user.payorder_set.order_by("-order_data")
+    return render(request,"buyer/user_center_order.html",locals())
 # Create your views here.
 

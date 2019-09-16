@@ -16,5 +16,6 @@ urlpatterns = [
     path('alipay/', AlipayViews),
     path('pay_result/', pay_result),
     path('add_cart/', add_cart),
-    path('cart/', cart)
+    path('cart/', cart),
+    path('uco/', user_center_order)
 ]
