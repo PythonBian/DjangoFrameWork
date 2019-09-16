@@ -1,5 +1,5 @@
 from django.core.paginator import Paginator
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect,JsonResponse
 from django.shortcuts import render
 from Seller.models import *
 from Seller.views import setPassword
@@ -166,5 +166,39 @@ def pay_result(request):
         order.order_status = 1
         order.save()
     return render(request,"buyer/pay_result.html",locals())
+@loginValid
+def add_cart(request):
+    result = {
+        "code": 200,
+        "data": ""
+    }
+    if request.method == "POST":
+        id = int(request.POST.get("goods_id"))
+        count = int(request.POST.get("count",1))
+
+        goods = Goods.objects.get(id = id) #获取商品信息
+        cart = Cart()
+        cart.goods_name = goods.goods_name
+        cart.goods_number = count
+        cart.goods_price = goods.goods_price
+        cart.goods_picture = goods.picture
+        cart.goods_total = goods.goods_price*count
+        cart.goods_id = id
+        cart.cart_user = request.COOKIES.get("user_id")
+        cart.save()
+        result["data"] = "加入购物车成功"
+    else:
+        result["code"] = 500
+        result["data"] = "请求方式错误"
+    return JsonResponse(result)
+
+def cart(request):
+    """
+    返回当前用户购物车当中的商品以-id
+    """
+    user_id = request.COOKIES.get("user_id")
+    goods = Cart.objects.filter(cart_user = int(user_id)).order_by("-id")
+    count = goods.count()
+    return render(request,"buyer/cart.html",locals())
 # Create your views here.
 
