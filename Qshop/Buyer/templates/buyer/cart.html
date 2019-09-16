@@ -15,9 +15,10 @@
 		<li class="col05">小计</li>
 		<li class="col06">操作</li>
 	</ul>
+    <form action="/Buyer/pay_order_more/">
     {% for g in goods %}
 	<ul class="cart_list_td clearfix">
-		<li class="col01"><input type="checkbox" name="" checked></li>
+		<li class="col01"><input class="goods_check" type="checkbox" name="check_{{ g.id }}"></li>
 		<li class="col02"><img src="/static/{{ g.goods_picture }}"></li>
 		<li class="col03">{{ g.goods_name }}<br><em>{{ g.goods_price }}元/500g</em></li>
 		<li class="col04">500g</li>
@@ -25,7 +26,7 @@
 		<li class="col06">
 			<div class="num_add">
 				<a href="javascript:;" class="add fl">+</a>
-				<input type="text" class="num_show fl" value="{{ g.goods_number }}">
+				<input type="text" class="num_show fl" value="{{ g.goods_number }}" name="count_{{ g.id }}">
 				<a href="javascript:;" class="minus fl">-</a>
 			</div>
 		</li>
@@ -34,9 +35,35 @@
 	</ul>
     {% endfor %}
 	<ul class="settlements">
-		<li class="col01"><input type="checkbox" name="" checked=""></li>
+		<li class="col01"><input type="checkbox" id="allBox" name=""></li>
 		<li class="col02">全选</li>
 		<li class="col03">合计(不含运费)：<span>¥</span><em>42.60</em><br>共计<b>{{ count }}</b>件商品</li>
-		<li class="col04"><a href="place_order.html">去结算</a></li>
+		<li class="col04"><input type="submit" value="去结算"></li>
 	</ul>
+    </form>
+{% endblock %}
+{% block script %}
+    <script>
+        $("#allBox").click(
+            function () {
+                //this.checked //true代表选中，false没有选中
+                if(this.checked){
+                    $(".goods_check").prop("checked",true)
+                }else {
+                    $(".goods_check").prop("checked",false)
+                }
+            }
+        );
+        $(".goods_check").each(
+            function () {
+                $(this).click(
+                    function () {
+                        if(!this.checked){
+                            $("#allBox").prop("checked",false)
+                        }
+                    }
+                )
+            }
+        )
+    </script>
 {% endblock %}

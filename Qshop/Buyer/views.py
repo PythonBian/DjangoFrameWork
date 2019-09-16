@@ -131,6 +131,45 @@ def pay_order(request):
         order.save()
     return render(request,"buyer/pay_order.html",locals())
 
+
+@loginValid
+def pay_order_more(request):
+    data = request.GET
+    data_item = data.items()
+    request_data = []
+    for key,value in data_item:
+        if key.startswith("check_"):
+            goods_id = key.split("_",1)[1]
+            count = data.get("count_"+goods_id)
+            request_data.append((int(goods_id),int(count)))
+    if request_data:
+        #保存订单表，但是保存总价
+        order = PayOrder()
+        order.order_number = str(time.time()).replace(".","")
+        order.order_data = datetime.datetime.now()
+        order.order_status = 0
+        order.order_user = LoginUser.objects.get(id = int(request.COOKIES.get("user_id"))) #订单对应的买家
+        order.save()
+        #保存订单详情
+        #查询商品的信息
+        order_total = 0
+        for goods_id,count in request_data:
+            goods = Goods.objects.get(id = int(goods_id))
+            order_info = OrderInfo()
+            order_info.order_id = order
+            order_info.goods_id = goods.id
+            order_info.goods_picture = goods.picture
+            order_info.goods_name = goods.goods_name
+            order_info.goods_count = int(count)
+            order_info.goods_price = goods.goods_price
+            order_info.goods_total_price = goods.goods_price*int(count)
+            order_info.store_id = goods.goods_store #商品卖家，goods.goods_store本身就是一条卖家数据
+            order_info.save()
+            order_total += order_info.goods_total_price #总价计算
+        order.order_total = order_total
+        order.save()
+    return render(request,"buyer/pay_order.html",locals())
+
 from Qshop.settings import alipay_public_key_string,alipay_private_key_string
 
 def AlipayViews(request):
