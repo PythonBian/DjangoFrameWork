@@ -3,7 +3,7 @@ import hashlib
 from django.core.paginator import Paginator
 from django.shortcuts import render,HttpResponseRedirect,HttpResponse
 from django.http import JsonResponse
-
+from django.views.decorators.csrf import csrf_exempt #免除csrf保护
 from Seller.models import *
 
 def loginValid(fun):
@@ -151,3 +151,64 @@ def goods_add(request):
         goods.save()
 
     return render(request,"seller/goods_add.html",locals())
+
+
+import json
+import requests
+from Qshop.settings import DING_URL
+def sendDing(content,to=None):
+    headers = {
+        "Content-Type": "application/json",
+        "Charset": "utf-8"
+    }
+    requests_data = {
+        "msgtype": "text",
+        "text": {
+            "content": content
+        },
+        "at": {
+            "atMobiles": [
+            ],
+            "isAtAll": True
+        }
+    }
+    if to:
+        requests_data["at"]["atMobiles"].append(to)
+        requests_data["at"]["isAtAll"] = False
+    else:
+        requests_data["at"]["atMobiles"].clear()
+        requests_data["at"]["isAtAll"] = True
+    sendData = json.dumps(requests_data)
+    response = requests.post(url=DING_URL, headers=headers, data=sendData)
+    content = response.json()
+    return content
+
+import random
+def random_code(len=6):
+    """
+    生成6位验证码
+    """
+    string = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    valid_code = "".join([random.choice(string) for i in range(len)])
+    return valid_code
+
+@csrf_exempt
+def send_login_code(request):
+    result = {
+        "code": 200,
+        "data": ""
+    }
+    if request.method == "POST":
+        email = request.POST.get("email")
+        code = random_code()
+        c = Valid_Code()
+        c.code_user = email
+        c.code_content = code
+        c.save()
+        send_data = "%s的验证码是%s,打死也不要告诉别人哟"%(email,code)
+        sendDing(send_data) #发送验证
+        result["data"] = "发送成功"
+    else:
+        result["code"] = 400
+        result["data"] = "请求错误"
+    return JsonResponse(result)

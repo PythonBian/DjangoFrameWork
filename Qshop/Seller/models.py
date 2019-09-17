@@ -33,6 +33,12 @@ class Goods(models.Model):
     goods_type = models.ForeignKey(to = GoodsType,on_delete = models.CASCADE,default=1)
     goods_store = models.ForeignKey(to = LoginUser,on_delete = models.CASCADE,default=1)
 
+class Valid_Code(models.Model):
+    code_content = models.CharField(max_length = 32)
+    code_user = models.EmailField()
+    code_time = models.DateTimeField(auto_now=True)
+    code_state = models.IntegerField(default=0) #1使用 0未使用
+
 # Create your models here.
 
 # Create your models here.
