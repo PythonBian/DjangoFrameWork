@@ -41,12 +41,15 @@ def register(request):
         else:
             error_message = "邮箱不可以为空"
     return render(request,"seller/register.html",locals())
+import time
+import datetime
 
 def login(request):
     error_message = ""
     if request.method == "POST":
         email = request.POST.get("email")
         password = request.POST.get("password")
+        code = request.POST.get("valid_code")
         if email:
             # 首先检测email有没有
             user = LoginUser.objects.filter(email=email).first()
@@ -54,11 +57,21 @@ def login(request):
                 db_password = user.password
                 password = setPassword(password)
                 if db_password == password:
-                    response = HttpResponseRedirect("/Seller/index/")
-                    response.set_cookie("username",user.username)
-                    response.set_cookie("user_id", user.id)
-                    request.session["username"] = user.username
-                    return response
+                    #检测验证码
+                    #获取验证码
+                    codes = Valid_Code.objects.filter(code_user=email).order_by("-code_time").first()
+                    #校验验证码是否存在，是否过期，是否被使用
+                    now = time.mktime(datetime.datetime.now().timetuple())
+                    db_time = time.mktime(codes.code_time.timetuple())
+                    t = (now - db_time)/60
+                    if codes and codes.code_state == 0 and t <= 5 and codes.code_content.upper() == code.upper():
+                        response = HttpResponseRedirect("/Seller/index/")
+                        response.set_cookie("username",user.username)
+                        response.set_cookie("user_id", user.id)
+                        request.session["username"] = user.username
+                        return response
+                    else:
+                        error_message = "验证码错误"
                 else:
                     error_message = "密码错误"
             else:
