@@ -205,6 +205,7 @@ def random_code(len=6):
     valid_code = "".join([random.choice(string) for i in range(len)])
     return valid_code
 
+from CeleryTask.tasks import sendDing
 @csrf_exempt
 def send_login_code(request):
     result = {
@@ -219,7 +220,8 @@ def send_login_code(request):
         c.code_content = code
         c.save()
         send_data = "%s的验证码是%s,打死也不要告诉别人哟"%(email,code)
-        sendDing(send_data) #发送验证
+        sendDing.delay(send_data)
+        #sendDing(send_data) #发送验证
         result["data"] = "发送成功"
     else:
         result["code"] = 400

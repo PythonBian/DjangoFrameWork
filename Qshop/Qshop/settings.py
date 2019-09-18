@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Buyer',
-    'Seller'
+    'Seller',
+    'djcelery'
 ]
 
 MIDDLEWARE = [
@@ -139,7 +140,12 @@ MIIEowIBAAKCAQEA91XOUtAt6npBHAsZJbidDcBWVNGGsMN3IdoW2II23HUW+BjMSXv0LK17ZB5DgslI
 DING_URL = "https://oapi.dingtalk.com/robot/send?access_token=739cdc134a4021dfe673a5ba5b73e772af3da26d94c246a93d9d16fdf7f8658e"
 
 
-
+import djcelery #导入django-celery模块
+djcelery.setup_loader() #进行模块载
+BROKER_URL = 'redis://127.0.0.1:6379/1' #任务容器地址，redis数据库地址
+CELERY_IMPORTS = ('CeleryTask.tasks')  #具体的任务文件
+CELERY_TIMEZONE = 'Asia/Shanghai' #celery时区
+CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler' #celey处理器，固定
 
 
 

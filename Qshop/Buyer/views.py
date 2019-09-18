@@ -246,5 +246,17 @@ def user_center_order(request):
     user = LoginUser.objects.get(id = int(user_id))
     order_list = user.payorder_set.order_by("-order_data")
     return render(request,"buyer/user_center_order.html",locals())
+
+
+from CeleryTask.tasks import add
+
+def get_task(request):
+    # taskExample.delay() #发布任务
+    num1 = request.GET.get("num1",1)
+    num2 = request.GET.get("num2",2)
+    add.delay(int(num1),int(num2))
+    return JsonResponse({"data":"success"})
+
+
 # Create your views here.
 
