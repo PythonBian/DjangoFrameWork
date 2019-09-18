@@ -18,5 +18,6 @@ urlpatterns = [
     path('add_cart/', add_cart),
     path('cart/', cart),
     path('uco/', user_center_order),
-    path('gt/', get_task)
+    path('gt/', get_task),
+    path('mtv/', middle_test_view)
 ]

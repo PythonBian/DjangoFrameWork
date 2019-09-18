@@ -1,0 +1,9 @@
+[2019-09-18 15:50:56]:name 'a' is not defined
+[2019-09-18 15:50:59]:name 'a' is not defined
+[2019-09-18 15:53:31]:name 'a' is not defined
+[2019-09-18 15:55:11]:name 'a' is not defined
+[2019-09-18 15:55:22]:name 'a' is not defined
+[2019-09-18 16:02:28]:'HttpResponse' object has no attribute 'render'
+[2019-09-18 16:03:12]:'HttpResponse' object has no attribute 'render'
+[2019-09-18 16:17:39]:Goods matching query does not exist.
+[2019-09-18 16:17:54]:Goods matching query does not exist.

@@ -257,6 +257,18 @@ def get_task(request):
     add.delay(int(num1),int(num2))
     return JsonResponse({"data":"success"})
 
+def middle_test_view(request):
+    print("I am view")
+    return JsonResponse({"data":"hello world"})
+
+
+# from django.http import HttpResponse
+# def middle_test_view(request):
+#     def hello():
+#         return HttpResponse("hello world")
+#     rep = HttpResponse("ni hao")
+#     rep.render = hello
+#     return rep
 
 # Create your views here.
 

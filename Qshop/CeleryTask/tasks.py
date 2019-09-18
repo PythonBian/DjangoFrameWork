@@ -14,7 +14,7 @@ import json
 import requests
 from Qshop.settings import DING_URL
 @app.task
-def sendDing(content,to=None):
+def sendDing(content="hello world",to=None):
     headers = {
         "Content-Type": "application/json",
         "Charset": "utf-8"

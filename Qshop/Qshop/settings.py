@@ -25,7 +25,7 @@ SECRET_KEY = '8&1u%oz5zbs8k-(m*6k6ecpqz_dprb#u_*-81tk6=c=la)bynt'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -50,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'Qshop.middleware.MiddleWareTest'
 ]
 
 ROOT_URLCONF = 'Qshop.urls'
@@ -147,6 +148,14 @@ CELERY_IMPORTS = ('CeleryTask.tasks')  #具体的任务文件
 CELERY_TIMEZONE = 'Asia/Shanghai' #celery时区
 CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler' #celey处理器，固定
 
+from celery.schedules import crontab
+from celery.schedules import timedelta
 
+CELERYBEAT_SCHEDULE = {
+    u'测试任务1': {
+        "task": "CeleryTask.tasks.sendDing", #任务函数
+        "schedule": timedelta(seconds=1) #执行时间
+    }
+}
 
-
+ERROR_PATH = os.path.join(BASE_DIR,"error.log")
