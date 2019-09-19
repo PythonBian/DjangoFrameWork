@@ -18,7 +18,7 @@
     <form action="/Buyer/pay_order_more/">
     {% for g in goods %}
 	<ul class="cart_list_td clearfix">
-		<li class="col01"><input class="goods_check" type="checkbox" name="check_{{ g.id }}"></li>
+		<li class="col01"><input class="goods_check" type="checkbox" name="check_{{ g.goods_id }}"></li>
 		<li class="col02"><img src="/static/{{ g.goods_picture }}"></li>
 		<li class="col03">{{ g.goods_name }}<br><em>{{ g.goods_price }}元/500g</em></li>
 		<li class="col04">500g</li>

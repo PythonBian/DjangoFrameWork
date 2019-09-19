@@ -23,14 +23,14 @@ class MiddleWareTest(MiddlewareMixin):
         """
         :param exception:
         """
-        if exception:
-            with open(ERROR_PATH,"a") as f:
-                now = time.strftime("%Y-%m-%d %H:%M:%S",time.localtime())
-                content = "[%s]:%s\n"%(now,exception)
-                f.write(content)
-                sendDing.delay(content)
-            return HttpResponse("代码错了，快改去吧，错误如下：<br> %s"%exception)
-
+        # if exception:
+        #     with open(ERROR_PATH,"a") as f:
+        #         now = time.strftime("%Y-%m-%d %H:%M:%S",time.localtime())
+        #         content = "[%s]:%s\n"%(now,exception)
+        #         f.write(content)
+        #         sendDing.delay(content)
+        #     return HttpResponse("代码错了，快改去吧，错误如下：<br> %s"%exception)
+        pass
     def process_template_response(self,request,response):
         """
         必须返回一个render才可以触发

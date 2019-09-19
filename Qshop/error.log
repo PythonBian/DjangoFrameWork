@@ -7,3 +7,5 @@
 [2019-09-18 16:03:12]:'HttpResponse' object has no attribute 'render'
 [2019-09-18 16:17:39]:Goods matching query does not exist.
 [2019-09-18 16:17:54]:Goods matching query does not exist.
+[2019-09-19 08:52:13]:
+[2019-09-19 10:58:13]:NOT NULL constraint failed: Buyer_orderinfo.order_status

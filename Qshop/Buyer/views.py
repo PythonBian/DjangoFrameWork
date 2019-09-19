@@ -111,7 +111,6 @@ def pay_order(request):
         order = PayOrder()
         order.order_number = str(time.time()).replace(".","")
         order.order_data = datetime.datetime.now()
-        order.order_status = 0
         order.order_user = LoginUser.objects.get(id = int(request.COOKIES.get("user_id"))) #订单对应的买家
         order.save()
         #保存订单详情
@@ -147,7 +146,6 @@ def pay_order_more(request):
         order = PayOrder()
         order.order_number = str(time.time()).replace(".","")
         order.order_data = datetime.datetime.now()
-        order.order_status = 0
         order.order_user = LoginUser.objects.get(id = int(request.COOKIES.get("user_id"))) #订单对应的买家
         order.save()
         #保存订单详情
