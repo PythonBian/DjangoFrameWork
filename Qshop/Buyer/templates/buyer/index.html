@@ -1,9 +1,11 @@
 {% extends "buyer/base.html" %}
+{% load cache %}
 
 {% block title %}
     首页
 {% endblock %}
 
+{% cache 500 hsqcache %}
 {% block content %}
 	<div class="center_con clearfix">
 		<ul class="subnav fl">
@@ -59,3 +61,4 @@
 	</div>
     {% endfor %}
 {% endblock %}
+{% endcache %}

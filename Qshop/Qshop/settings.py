@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -50,7 +51,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'Qshop.middleware.MiddleWareTest'
+    'Qshop.middleware.MiddleWareTest',
+    'django.middleware.cache.FetchFromCacheMiddleware'
 ]
 
 ROOT_URLCONF = 'Qshop.urls'
@@ -129,6 +131,34 @@ STATICFILES_DIRS = (
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR,"static")
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': [
+            "127.0.0.1:11211" #本地memcache的地址端口
+        ]
+    }
+}
+CACHE_MIDDLEWARE_KEY_PREFIX = ''
+#同个服务器下多个网站共享缓存，一般配置的是域名
+CACHE_MIDDLEWARE_SECONDS = 600 #全局缓存的寿命
+CACHE_MIDDLEWARE_ALIAS = 'default'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 alipay_public_key_string = """-----BEGIN PUBLIC KEY-----
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA91XOUtAt6npBHAsZJbidDcBWVNGGsMN3IdoW2II23HUW+BjMSXv0LK17ZB5DgslIHDmz3+jbPVGHujJXiVoHdj6llmg3uUkOgI9QeK3pFdppLvQNv+av6JaL7wXS9bM7n0jJBqioivg5zKtcABr70cXCFD57z58U3MFVkxhxZuQx5MSpY/nJy0CTXc6g89XvZT7Vtgx0feHOwC/VBOenltVkSalcjofEjQJEQaK2yXR6EIiSSnDq8DUY3NjH6D/F5xdD1lFkc6OFZHnovi0UOaTW/63Uw5jNpa8QDCjZWj/2U5Oyw9NiWBn4EWxMk8g+D5yFVmbXwRfV9LoWekO3bQIDAQAB

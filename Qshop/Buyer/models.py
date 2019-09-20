@@ -14,7 +14,6 @@ class PayOrder(models.Model):
     order_data = models.DateTimeField(auto_now=True)
     order_total = models.FloatField(blank=True,null=True)
     order_user = models.ForeignKey(to=LoginUser,on_delete=models.CASCADE)
-
 class OrderInfo(models.Model):
     """
     订单详情表
@@ -34,6 +33,16 @@ class OrderInfo(models.Model):
     order_status = models.IntegerField(default=0)
     store_id = models.ForeignKey(to=LoginUser,on_delete=models.CASCADE)
 
+
+from django.db.models import Manager
+
+class CartManage(Manager):
+    def adds(self,id):
+        cart = Cart.objects.get(id=id)
+        cart.goods_number+=1
+        cart.goods_total += cart.goods_price
+        cart.save()
+
 class Cart(models.Model):
     """
     商品名称
@@ -51,6 +60,9 @@ class Cart(models.Model):
     goods_total = models.FloatField()
     goods_id = models.IntegerField()
     cart_user = models.IntegerField()
+
+    objects = CartManage()
+
 
 """
 一个订单，三件商品，假如一件商品确认发货，其他两件未发货

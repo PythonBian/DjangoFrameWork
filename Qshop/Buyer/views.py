@@ -199,9 +199,8 @@ def AlipayViews(request):
 def pay_result(request):
     out_trade_no = request.GET.get("out_trade_no")
     if out_trade_no:
-        order = PayOrder.objects.get(order_number = out_trade_no)
-        order.order_status = 1
-        order.save()
+        order = PayOrder.objects.get(order_number = out_trade_no) #总的订单号
+        order.orderinfo_set.all().update(order_status=1) #当前订单所有的详情订单
     return render(request,"buyer/pay_result.html",locals())
 @loginValid
 def add_cart(request):
@@ -259,7 +258,14 @@ def middle_test_view(request):
     print("I am view")
     return JsonResponse({"data":"hello world"})
 
+from django.core.cache import cache
+def cacheTest(request):
+    user = cache.get("user") #从缓存里面获取用户
+    if not user: #如果为None
+        user = LoginUser.objects.get(id=1)
+        cache.set("user",user,30) #将用户数据存入缓存，缓存事件30秒
 
+    return JsonResponse({"data":"hello world"})
 # from django.http import HttpResponse
 # def middle_test_view(request):
 #     def hello():

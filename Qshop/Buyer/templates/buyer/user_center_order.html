@@ -47,27 +47,30 @@
 									<li class="col01"><img src="/static/{{ o.goods_picture }}"></li>
 									<li class="col02">{{ o.goods_name }}<em>{{ o.goods_price }}元/500g</em></li>
 									<li class="col03">{{ o.goods_count }}</li>
+                                    <li class="col03">
+                                        {% ifequal o.order_status 0 %}
+                                            未支付
+                                        {% endifequal %}
+                                        {% ifequal o.order_status 1 %}
+                                            已支付
+                                        {% endifequal %}
+                                        {% ifequal o.order_status 2 %}
+                                            代发货
+                                        {% endifequal %}
+                                        {% ifequal o.order_status 3 %}
+                                            待收货
+                                        {% endifequal %}
+                                        {% ifequal o.order_status 4 %}
+                                            完成
+                                        {% endifequal %}
+                                    </li>
 									<li class="col04">{{ o.goods_total_price }}元</li>
 								</ul>
                                 {% endfor %}
 							</td>
 							<td width="15%">{{ order.order_total }}元</td>
 
-                            {% ifequal order.order_status 0 %}
-                                <td width="15%">未支付</td>
-                            {% endifequal %}
-                            {% ifequal order.order_status 1 %}
-                                <td width="15%">已支付</td>
-                            {% endifequal %}
-                            {% ifequal order.order_status 2 %}
-                                <td width="15%">代发货</td>
-                            {% endifequal %}
-                            {% ifequal order.order_status 3 %}
-                                <td width="15%">待收货</td>
-                            {% endifequal %}
-                            {% ifequal order.order_status 4 %}
-                                <td width="15%">完成</td>
-                            {% endifequal %}
+
 
                             {% ifequal order.order_status 0 %}
                                 <td width="15%"><a href="/Buyer/alipay/?order_number={{ order.order_number }}&total={{ order.order_total }}" class="oper_btn">去付款</a></td>
@@ -78,8 +81,6 @@
 					</tbody>
 				</table>
                 {% endfor %}
-
-
 				<div class="pagenation">
 					<a href="#"><上一页</a>
 					<a href="#" class="active">1</a>
@@ -92,4 +93,3 @@
 		</div>
 	</div>
 {% endblock %}
-

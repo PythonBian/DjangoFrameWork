@@ -467,7 +467,7 @@ html,body{height:100%}
 .order_goods_list li{float:left; height:80px;line-height:80px;}
 .order_goods_list .col01{width:20%}
 .order_goods_list .col01 img{width:60px;height:60px;border:1px solid #ddd;margin:10px auto;}
-.order_goods_list .col02{width:50%;text-align:left;}
+.order_goods_list .col02{width:30%;text-align:left;}
 .order_goods_list .col02 em{color:#999;margin-left:10px}
 .order_goods_list .col03{width:10%}
 .order_goods_list .col04{width:20%}

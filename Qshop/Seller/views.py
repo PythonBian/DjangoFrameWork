@@ -43,7 +43,8 @@ def register(request):
     return render(request,"seller/register.html",locals())
 import time
 import datetime
-
+from django.views.decorators.cache import cache_page
+@cache_page(60*15) #使用缓存，缓存的寿命15分钟
 def login(request):
     error_message = ""
     if request.method == "POST":
@@ -250,4 +251,7 @@ def change_order(request):
     order = OrderInfo.objects.get(id = order_id)
     order.order_status = int(order_status)
     order.save()
-    return JsonResponse({"data":"修改成功"})
+    url = request.META.get("HTTP_REFERER", "/order_list/1/")
+    store = LoginUser.objects.get(id = 1)
+    store.orderinfo_set.filter()
+    return HttpResponseRedirect(url)
